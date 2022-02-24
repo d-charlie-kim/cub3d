@@ -6,23 +6,11 @@
 /*   By: dokkim <dokkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/04 22:21:03 by dokkim            #+#    #+#             */
-/*   Updated: 2021/08/04 18:29:33 by dokkim           ###   ########seoul.kr  */
+/*   Updated: 2022/02/24 17:40:57 by dokkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
-
-int	ft_strlen(char *str)
-{
-	ssize_t	i;
-
-	i = 0;
-	if (str == NULL)
-		return (0);
-	while (str[i])
-		i++;
-	return (i);
-}
 
 void	ft_memcpy(char *dst, char *src, ssize_t n)
 {
@@ -60,6 +48,7 @@ void	gnl_error(char *str, char *ptr1, char *ptr2)
 {
 	free(ptr1);
 	free(ptr2);
-	printf("%s\n", str);
+	write (1, str, ft_strlen(str));
+	write (1, "\n", 1);
 	exit(-1);
 }

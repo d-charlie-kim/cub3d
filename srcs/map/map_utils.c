@@ -1,22 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_error.c                                         :+:      :+:    :+:   */
+/*   map_utils.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dokkim <dokkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/24 16:16:38 by dokkim            #+#    #+#             */
-/*   Updated: 2022/02/24 17:58:57 by dokkim           ###   ########.fr       */
+/*   Created: 2022/02/24 16:28:54 by dokkim            #+#    #+#             */
+/*   Updated: 2022/02/24 18:01:43 by dokkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include <stdlib.h>
+#include "mapping.h"
 #include "error.h"
-#include "libft.h"
 
-void	ft_error(char *str)
+void	ft_lst_add(t_map *lst)
 {
-	write(1, str, ft_strlen(str));
-	exit (1);
+	lst = (t_map *)malloc(sizeof(t_map));
+	if (!(lst))
+		ft_error("Error\n : CANT ALLOCATE MEMORY\n");
+	lst->line = NULL;
+	lst->next = NULL;
+	lst->width = 0;
+}
+
+void	map_name_check(char *str, char *str2)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	j = 3;
+	while (str[i])
+		i++;
+	i--;
+	while (j >= 0)
+	{
+		if (str[i] != str2[j])
+			ft_error("Error\n : MAP FILE IS NOT VALID");
+		i--;
+		j--;
+	}
 }

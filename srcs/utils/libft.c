@@ -6,11 +6,12 @@
 /*   By: dokkim <dokkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/24 16:17:35 by dokkim            #+#    #+#             */
-/*   Updated: 2022/02/24 16:18:23 by dokkim           ###   ########.fr       */
+/*   Updated: 2022/02/24 18:00:21 by dokkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "error.h"
 
 int	ft_strlen(char *str)
 {

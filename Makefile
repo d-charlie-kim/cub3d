@@ -6,7 +6,7 @@
 #    By: dokkim <dokkim@student.42seoul.kr>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/24 15:59:26 by dokkim            #+#    #+#              #
-#    Updated: 2022/02/24 16:00:05 by dokkim           ###   ########.fr        #
+#    Updated: 2022/02/24 17:58:18 by dokkim           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,9 +15,10 @@ OS			= Mac
 
 CC			= gcc
 CFLAGS		= $(INCFLAGS) $(WFLAGS) #$(GFLAGS)
-GFLAGS		= -g -fsanitize=address
 WFLAGS		= -Wall -Wextra -Werror
-INC			= -I ./includes
+GFLAGS		= -g -fsanitize=address
+INCDIR		= includes
+INC			= -I $(INCDIR)
 
 ifeq ($(OS), Linux)
 	MLXFLAGS = -lmlx -lbsd -lXext -lX11
@@ -33,22 +34,33 @@ GNL_SRCS		= $(addprefix ./srcs/get_next_line/, \
 					get_next_line_utils.c \
 					)
 
-DRAW_SRCS		= $(addprefix ./srcs/draw/, \
-					)
+# DRAW_SRCS		= $(addprefix ./srcs/draw/, \
+# 					)
 
 MAP_SRCS		= $(addprefix ./srcs/map/, \
+					map_parsing.c \
+					map_utils.c \
 					)
 
-MOVE_SRCS		= $(addprefix ./srcs/move/, \
-					)
+# MOVE_SRCS		= $(addprefix ./srcs/move/, \
+# 					)
 
 UTILS_SRCS		= $(addprefix ./srcs/utils/, \
+					libft.c \
 					)
 
-VALIDATE_SRCS	= $(addprefix ./srcs/validate/, \
+# VALIDATE_SRCS	= $(addprefix ./srcs/validate/, \
+# 					)
+
+ERROR_SRCS		= $(addprefix ./srcs/error/, \
+					ft_error.c \
 					)
 
 SRCS		= ./srcs/main.c \
+				$(GNL_SRCS) \
+				$(MAP_SRCS) \
+				$(UTILS_SRCS) \
+				$(ERROR_SRCS) \
 
 OBJS	= $(SRCS:.c=.o)
 
@@ -58,10 +70,11 @@ OBJS	= $(SRCS:.c=.o)
 all			: $(NAME)
 
 $(NAME)		: $(MLX) $(OBJS)
-	$(CC) $(OBJS) $(INC) $(CFLAGS) $(MLXFLAGS) -o $@
+	$(CC) $(OBJS) $(INC) $(CFLAGS) -o $@
+# $(MLXFLAGS) 뺌
 
 $(MLX)		:
-	make -C $(MLXDIR) all
+	# make -C $(MLXDIR) all
 
 clean		:
 	$(RM) $(OBJS)

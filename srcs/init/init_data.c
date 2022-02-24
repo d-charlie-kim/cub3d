@@ -1,18 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   init_data.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dokkim <dokkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/24 16:18:33 by dokkim            #+#    #+#             */
-/*   Updated: 2022/02/24 18:00:34 by dokkim           ###   ########.fr       */
+/*   Created: 2022/02/24 17:19:07 by dokkim            #+#    #+#             */
+/*   Updated: 2022/02/24 17:24:28 by dokkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "init.h"
+#include "struct.h"
 
-int	ft_strlen(char *str);
-
-#endif
+void	data_init(t_data *data)
+{
+	
+}

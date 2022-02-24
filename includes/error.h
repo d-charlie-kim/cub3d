@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   error.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dokkim <dokkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/24 16:18:33 by dokkim            #+#    #+#             */
-/*   Updated: 2022/02/24 18:00:34 by dokkim           ###   ########.fr       */
+/*   Created: 2022/02/24 17:39:26 by dokkim            #+#    #+#             */
+/*   Updated: 2022/02/24 17:39:42 by dokkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#ifndef ERROR_H
+# define ERROR_H
 
-int	ft_strlen(char *str);
+void	ft_error(char *str);
 
 #endif
