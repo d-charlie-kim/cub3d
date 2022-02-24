@@ -6,7 +6,7 @@
 #    By: dokkim <dokkim@student.42seoul.kr>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/24 15:59:26 by dokkim            #+#    #+#              #
-#    Updated: 2022/02/24 19:51:28 by dokkim           ###   ########.fr        #
+#    Updated: 2022/02/24 21:16:41 by dokkim           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME		= cub3d
 OS			= Mac
 
 CC			= gcc
-CFLAGS		= $(INCFLAGS) $(WFLAGS) #$(GFLAGS)
+CFLAGS		= $(INCFLAGS) #$(WFLAGS) #$(GFLAGS)
 WFLAGS		= -Wall -Wextra -Werror
 GFLAGS		= -g -fsanitize=address
 INCDIR		= includes
@@ -34,31 +34,32 @@ GNL_SRCS		= $(addprefix ./srcs/get_next_line/, \
 					get_next_line_utils.c \
 					)
 
-# DRAW_SRCS		= $(addprefix ./srcs/draw/, \
-# 					)
-
 PARSE_SRCS		= $(addprefix ./srcs/parse/, \
-					map_parsing.c \
-					map_utils.c \
-					)
-
-# MOVE_SRCS		= $(addprefix ./srcs/move/, \
-# 					)
-
-UTILS_SRCS		= $(addprefix ./srcs/utils/, \
-					libft.c \
+					init_data.c \
+					parsing.c \
+					parse_utils.c \
+					put_data.c \
 					)
 
 # VALIDATE_SRCS	= $(addprefix ./srcs/validate/, \
+# 					)
+# DRAW_SRCS		= $(addprefix ./srcs/draw/, \
+# 					)
+# MOVE_SRCS		= $(addprefix ./srcs/move/, \
 # 					)
 
 ERROR_SRCS		= $(addprefix ./srcs/error/, \
 					ft_error.c \
 					)
 
+UTILS_SRCS		= $(addprefix ./srcs/utils/, \
+					libft.c \
+					)
+
+
 SRCS		= ./srcs/main.c \
 				$(GNL_SRCS) \
-				$(MAP_SRCS) \
+				$(PARSE_SRCS) \
 				$(UTILS_SRCS) \
 				$(ERROR_SRCS) \
 

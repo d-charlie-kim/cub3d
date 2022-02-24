@@ -6,12 +6,16 @@
 /*   By: dokkim <dokkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/24 17:21:55 by dokkim            #+#    #+#             */
-/*   Updated: 2022/02/24 17:38:21 by dokkim           ###   ########.fr       */
+/*   Updated: 2022/02/24 20:18:18 by dokkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef INIT_H
 # define INIT_H
 
+#include <unistd.h>
+#include "struct.h"
+
+void	data_init(t_data *data);
 
 #endif
