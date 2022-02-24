@@ -1,24 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dokkim <dokkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/24 15:57:36 by dokkim            #+#    #+#             */
-/*   Updated: 2022/02/24 16:23:19 by dokkim           ###   ########.fr       */
+/*   Created: 2022/02/24 16:18:33 by dokkim            #+#    #+#             */
+/*   Updated: 2022/02/24 16:19:04 by dokkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	main(int argc, char **argv)
-{
-	//t_data	data;
+#ifndef LIBFT_H
+# define LIBFT_H
 
-	if (argc != 2)
-		ft_error("Error\n : Arguments error\n");
-	//data_init(&data);
-	mapping(argv, &data);
-	map_validate(&data);
-	//draw
-	return (0);
-}
+int	ft_strlen(char *str);
+
+
+
+#endif

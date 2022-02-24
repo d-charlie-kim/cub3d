@@ -1,24 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   struct.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dokkim <dokkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/24 15:57:36 by dokkim            #+#    #+#             */
-/*   Updated: 2022/02/24 16:23:19 by dokkim           ###   ########.fr       */
+/*   Created: 2022/02/24 16:21:29 by dokkim            #+#    #+#             */
+/*   Updated: 2022/02/24 16:23:02 by dokkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	main(int argc, char **argv)
-{
-	//t_data	data;
+#ifndef STRUCT_H
+# define STRUCT_H
 
-	if (argc != 2)
-		ft_error("Error\n : Arguments error\n");
-	//data_init(&data);
-	mapping(argv, &data);
-	map_validate(&data);
-	//draw
-	return (0);
-}
+typedef struct s_data
+{
+	/*
+		맵 담는 그릇 하나
+		그림 그릴 그릇 하나
+	*/
+}	t_data;
+
+#endif
