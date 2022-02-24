@@ -6,7 +6,7 @@
 #    By: dokkim <dokkim@student.42seoul.kr>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/24 15:59:26 by dokkim            #+#    #+#              #
-#    Updated: 2022/02/24 17:58:18 by dokkim           ###   ########.fr        #
+#    Updated: 2022/02/24 19:51:28 by dokkim           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,7 +37,7 @@ GNL_SRCS		= $(addprefix ./srcs/get_next_line/, \
 # DRAW_SRCS		= $(addprefix ./srcs/draw/, \
 # 					)
 
-MAP_SRCS		= $(addprefix ./srcs/map/, \
+PARSE_SRCS		= $(addprefix ./srcs/parse/, \
 					map_parsing.c \
 					map_utils.c \
 					)

@@ -6,13 +6,14 @@
 /*   By: dokkim <dokkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/24 15:57:40 by dokkim            #+#    #+#             */
-/*   Updated: 2022/02/24 18:01:43 by dokkim           ###   ########.fr       */
+/*   Updated: 2022/02/24 19:47:27 by dokkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "mapping.h"
 #include "get_next_line.h"
 #include "error.h"
+#include <stdio.h>
 
 static void	get_map(int fd, t_map *map_data)
 {
@@ -20,8 +21,8 @@ static void	get_map(int fd, t_map *map_data)
 	char	*str;
 	t_map	*temp;
 
-	temp = map_data;
 	line_size = 1;
+	temp = map_data;
 	while (line_size != 0)
 	{
 		str = NULL;
@@ -30,9 +31,10 @@ static void	get_map(int fd, t_map *map_data)
 			ft_error("Error\n : GNL ERROR");
 		temp->line = str;
 		temp->width = ft_strlen(str);
+		temp->next = NULL;
 		if (line_size != 0)
 		{
-			ft_lst_add(temp->next);
+			ft_lst_add(&(temp->next));
 			temp = temp->next;
 		}
 	}
@@ -46,6 +48,6 @@ void	map_parsing(char **argv, t_data *data)
 	fd = open(argv[1], O_RDONLY);
 	if (fd < 0)
 		ft_error("Error\n : OPEN ERROR\n");
-	ft_lst_add(data->map_data);
+	ft_lst_add(&(data->map_data));
 	get_map(fd, data->map_data);
-} 
+}
