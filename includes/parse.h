@@ -6,7 +6,7 @@
 /*   By: dokkim <dokkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/24 16:29:23 by dokkim            #+#    #+#             */
-/*   Updated: 2022/02/24 21:18:03 by dokkim           ###   ########.fr       */
+/*   Updated: 2022/02/24 21:19:14 by dokkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,14 +28,13 @@
 # define F	5
 # define C	6
 
-void		data_init(t_data *data);
+void	data_init(t_data *data);
 
-void		file_name_check(char *str, char *str2);
+void	file_name_check(char *str, char *str2);
 
 void	put_map(t_data *data, char *line);
 void	put_data(t_data *data, int id, char *line);
 
-
-void		parsing(char **argv, t_data *data);
+void	parsing(char **argv, t_data *data);
 
 #endif
