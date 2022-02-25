@@ -6,7 +6,7 @@
 /*   By: dokkim <dokkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/24 16:29:23 by dokkim            #+#    #+#             */
-/*   Updated: 2022/02/25 18:31:45 by dokkim           ###   ########.fr       */
+/*   Updated: 2022/02/25 18:43:41 by dokkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 # include "struct.h"
 # include "error.h"
 # include "libft.h"
-#include "get_next_line.h"
+# include "get_next_line.h"
 
 # define NO	1
 # define SO	2
