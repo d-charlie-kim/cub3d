@@ -5,103 +5,121 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dokkim <dokkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/04 22:18:14 by dokkim            #+#    #+#             */
-/*   Updated: 2022/02/24 17:40:19 by dokkim           ###   ########.fr       */
+/*   Created: 2021/02/18 17:18:40 by jaejeong          #+#    #+#             */
+/*   Updated: 2022/02/19 14:46:06 by dokkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-int	ft_return_one(char **line, char **save, char *buffer, ssize_t size)
+int	zero_ret(char **line, char *temp)
 {
-	ssize_t	i;
-
-	i = 0;
-	while (buffer[i] != '\n')
-		i++;
-	*line = (char *)malloc(ft_strlen(*save) + (sizeof(char) * (i + 1)));
-	if (!(*line))
-		gnl_error("Error\n : Malloc Error", NULL, *save);
-	**line = '\0';
-	ft_memcpy(*line, *save, ft_strlen(*save));
-	ft_memcpy(*line, buffer, i);
-	free(*save);
-	*save = (char *)malloc(sizeof(char) * (size - i));
-	if (!(*save))
-		gnl_error("Error\n : Malloc Error", NULL, *line);
-	**save = '\0';
-	ft_memcpy(*save, buffer + i + 1, size - i - 1);
-	return (1);
-}
-
-int	ft_return_zero(char **line, char **save, char *buffer, ssize_t size)
-{
-	*line = (char *)malloc(ft_strlen(*save) + (sizeof(char) * (size + 1)));
-	if (!(*line))
-		gnl_error("Error\n : Malloc Error", NULL, *save);
-	**line = '\0';
-	ft_memcpy(*line, *save, ft_strlen(*save));
-	ft_memcpy(*line, buffer, size);
-	free(*save);
-	*save = NULL;
+	if (!temp)
+	{
+		*line = (char *)malloc(sizeof(char) * 1);
+		if (!*line)
+			return (-1);
+		**line = '\0';
+	}
+	else
+	{
+		*line = (char *)malloc(sizeof(char) * (ft_strlen(temp) + 1));
+		if (!*line)
+		{
+			free(temp);
+			return (-1);
+		}
+		ft_strlcpy(*line, temp, ft_strlen(temp) + 1);
+		free(temp);
+	}
 	return (0);
 }
 
-void	ft_repeat(char **temp, char **save, char *buffer, ssize_t size)
+static int	one_ret(char **line, char **save, char *temp)
 {
-	*temp = (char *)malloc(ft_strlen(*save) + (sizeof(char) * (size + 1)));
-	if (!(*temp))
-		gnl_error("Error\n : Malloc Error", NULL, *save);
-	**temp = '\0';
-	ft_memcpy(*temp, *save, ft_strlen(*save));
-	ft_memcpy(*temp, buffer, size);
-	free(*save);
-	*save = *temp;
+	int	new;
+	int	null;
+
+	new = 0;
+	null = 0;
+	while (temp[new] != '\n')
+		new++;
+	while (temp[null] != '\0')
+		null++;
+	*line = (char *)malloc(sizeof(char) * (new + 1));
+	if (!*line)
+		return (error_free(temp, NULL));
+	*save = (char *)malloc(sizeof(char) * (null - new));
+	if (!*save)
+		return (error_free(temp, *line));
+	ft_strlcpy(*line, temp, new + 1);
+	ft_strlcpy(*save, temp + new + 1, null - new);
+	free(temp);
+	return (1);
 }
 
-int	ft_save(char **line, char **save)
+static char	*add_temp(char **temp, char *buf)
 {
-	ssize_t	i;
-	char	*temp;
+	char	*p;
 
-	i = 0;
-	while ((*save)[i] != '\n')
-		i++;
-	*line = (char *)malloc(sizeof(char) * (i + 1));
-	if (!(*line))
-		gnl_error("Error\n : Malloc Error", NULL, *save);
-	**line = '\0';
-	ft_memcpy(*line, *save, i);
-	temp = (char *)malloc(sizeof(char) * (ft_strlen(*save) - i));
-	if (!(temp))
-		gnl_error("Error\n : Malloc Error", *line, *save);
-	*temp = '\0';
-	ft_memcpy(temp, *save + i + 1, ft_strlen(*save) - i - 1);
-	free(*save);
-	*save = temp;
+	p = *temp;
+	*temp = ft_strjoin(*temp, buf);
+	free(p);
+	if (!*temp)
+		return (NULL);
+	return (*temp);
+}
+
+static int	read_buf(char *buf, char **temp, int fd)
+{
+	ssize_t	read_ret;
+
+	read_ret = read(fd, buf, BUFFER_SIZE);
+	if (!read_ret)
+		return (0);
+	if (read_ret < 0)
+	{
+		if (*temp)
+			free(*temp);
+		return (-1);
+	}
+	buf[read_ret] = '\0';
+	if (!*temp)
+	{
+		*temp = (char *)malloc(sizeof(char) * (read_ret + 1));
+		ft_strlcpy(*temp, buf, read_ret + 1);
+	}
+	else
+		*temp = add_temp(temp, buf);
+	if (!*temp)
+		return (-1);
 	return (1);
 }
 
 int	get_next_line(int fd, char **line)
 {
-	char		buffer[1024];
-	static char	*save = NULL;
-	ssize_t		size;
+	char		buf[BUFFER_SIZE + 1];
 	char		*temp;
+	static char	*save[OPEN_MAX];
+	int			ret;
 
-	if (ft_check(save, ft_strlen(save)))
-		return (ft_save(line, &save));
-	size = 0;
-	while (size >= 0)
+	if (fd < 0 || !line || BUFFER_SIZE <= 0)
+		return (-1);
+	temp = NULL;
+	if (save[fd])
 	{
-		size = read(fd, buffer, 1024);
-		if (ft_check(buffer, size))
-			return (ft_return_one(line, &save, buffer, size));
-		if (size > 0)
-			ft_repeat(&temp, &save, buffer, size);
-		else if (size == 0)
-			return (ft_return_zero(line, &save, buffer, size));
+		temp = (char *)malloc(sizeof(char) * (ft_strlen(save[fd]) + 1));
+		if (!temp)
+			return (-1);
+		ft_strlcpy(temp, save[fd], ft_strlen(save[fd]) + 1);
+		free(save[fd]);
+		save[fd] = NULL;
 	}
-	gnl_error("Error\n : GNL ERROR", NULL, save);
-	return (-1);
+	while (!newline_check(temp))
+	{
+		ret = read_buf(buf, &temp, fd);
+		if (ret == 0 || ret == -1)
+			return (zero_or_error(line, temp, ret));
+	}
+	return (one_ret(line, &save[fd], temp));
 }

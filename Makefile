@@ -6,7 +6,7 @@
 #    By: dokkim <dokkim@student.42seoul.kr>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/24 15:59:26 by dokkim            #+#    #+#              #
-#    Updated: 2022/02/24 21:16:41 by dokkim           ###   ########.fr        #
+#    Updated: 2022/02/25 17:25:06 by dokkim           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ CFLAGS		= $(INCFLAGS) #$(WFLAGS) #$(GFLAGS)
 WFLAGS		= -Wall -Wextra -Werror
 GFLAGS		= -g -fsanitize=address
 INCDIR		= includes
-INC			= -I $(INCDIR)
+INC			= -I$(INCDIR)
 
 ifeq ($(OS), Linux)
 	MLXFLAGS = -lmlx -lbsd -lXext -lX11

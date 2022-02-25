@@ -5,26 +5,32 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dokkim <dokkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/24 17:09:52 by dokkim            #+#    #+#             */
-/*   Updated: 2022/02/24 17:41:19 by dokkim           ###   ########.fr       */
+/*   Created: 2021/02/18 17:19:37 by jaejeong          #+#    #+#             */
+/*   Updated: 2022/02/19 14:46:02 by dokkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
 
-# include <unistd.h>
 # include <stdlib.h>
-# include "libft.h"
+# include <unistd.h>
+# include <limits.h>
+
+# define BUFFER_SIZE 5
+
+# ifndef OPEN_MAX
+#  define OPEN_MAX 256
+# endif
 
 int		get_next_line(int fd, char **line);
-int		ft_save(char **line, char **save);
-void	ft_repeat(char **temp, char **save, char *buffer, ssize_t size);
-int		ft_return_zero(char **line, char **save, char *buffer, ssize_t size);
-int		ft_return_one(char **line, char **save, char *buffer, ssize_t size);
-
-void	ft_memcpy(char *dst, char *src, ssize_t n);
-int		ft_check(char *str, ssize_t size);
-void	gnl_error(char *str, char *ptr1, char *ptr2);
+int		newline_check(char *s);
+int		put_save_in_temp(char **temp, char **save);
+size_t	ft_strlen(const char *str);
+size_t	ft_strlcpy(char *dest, const char *src, size_t size);
+char	*ft_strjoin(char const *s1, char const *s2);
+int		zero_or_error(char **line, char *temp, int ret);
+int		error_free(char *first, char *second);
+int		zero_ret(char **line, char *temp);
 
 #endif

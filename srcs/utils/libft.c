@@ -6,7 +6,7 @@
 /*   By: dokkim <dokkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/24 16:17:35 by dokkim            #+#    #+#             */
-/*   Updated: 2022/02/25 16:24:46 by dokkim           ###   ########.fr       */
+/*   Updated: 2022/02/25 17:23:51 by dokkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,18 +61,24 @@ char	*ft_strdup(const char *s)
 	return (temp);
 }
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 {
-	unsigned char	*n_dest;
-	unsigned char	*n_src;
+	size_t	i;
 
-	n_dest = (unsigned char *)dest;
-	n_src = (unsigned char *)src;
-	if (!n_dest && !n_src)
-		return (0);
-	while (n--)
-		*n_dest++ = *n_src++;
-	return (dest);
+	i = 0;
+	while (i + 1 < size && *src)
+	{
+		*dest++ = *src++;
+		i++;
+	}
+	if (size != 0)
+		*dest = '\0';
+	while (*src != '\0')
+	{
+		src++;
+		i++;
+	}
+	return (i);
 }
 
 int	ft_atoi(const char *nptr)
