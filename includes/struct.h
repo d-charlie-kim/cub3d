@@ -6,7 +6,7 @@
 /*   By: dokkim <dokkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/24 16:21:29 by dokkim            #+#    #+#             */
-/*   Updated: 2022/02/24 20:12:45 by dokkim           ###   ########.fr       */
+/*   Updated: 2022/02/25 16:43:19 by dokkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ typedef struct s_t_textures
 typedef struct s_data
 {
 	t_textures	textures; // 텍스쳐 담는 그릇 하나
-	int			**map_data; // 맵 담는 그릇 하나
+	char		**map_data; // 맵 담는 그릇 하나
 	// t_mlx or something // 그림 그릴 mlx 관련 그릇 하나
 }	t_data;
 

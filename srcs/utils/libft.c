@@ -6,7 +6,7 @@
 /*   By: dokkim <dokkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/24 16:17:35 by dokkim            #+#    #+#             */
-/*   Updated: 2022/02/24 21:03:40 by dokkim           ###   ########.fr       */
+/*   Updated: 2022/02/25 16:24:46 by dokkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,4 +59,47 @@ char	*ft_strdup(const char *s)
 		*dest++ = *(char *)s++;
 	*dest = 0;
 	return (temp);
+}
+
+void	*ft_memcpy(void *dest, const void *src, size_t n)
+{
+	unsigned char	*n_dest;
+	unsigned char	*n_src;
+
+	n_dest = (unsigned char *)dest;
+	n_src = (unsigned char *)src;
+	if (!n_dest && !n_src)
+		return (0);
+	while (n--)
+		*n_dest++ = *n_src++;
+	return (dest);
+}
+
+int	ft_atoi(const char *nptr)
+{
+	int	i;
+	int	ngtv;
+	int	num;
+
+	i = 0;
+	ngtv = 0;
+	num = 0;
+	while ((9 <= nptr[i] && nptr[i] <= 13) || nptr[i] == ' ')
+		i++;
+	if (nptr[i] == '+')
+		i++;
+	else if (nptr[i] == '-')
+	{
+		ngtv = 1;
+		i++;
+	}
+	while ('0' <= nptr[i] && nptr[i] <= '9')
+	{
+		num *= 10;
+		num += nptr[i] - 48;
+		i++;
+	}
+	if (ngtv == 1)
+		num *= -1;
+	return (num);
 }
