@@ -12,7 +12,6 @@
 
 #include <stdio.h>
 #include "struct.h"
-#include "init.h"
 #include "parse.h"
 #include "error.h"
 

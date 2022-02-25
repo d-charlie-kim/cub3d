@@ -13,14 +13,6 @@
 #ifndef PARSE_H
 # define PARSE_H
 
-# include <unistd.h>
-# include <stdlib.h>
-# include <fcntl.h>
-# include "struct.h"
-# include "error.h"
-# include "libft.h"
-# include "get_next_line.h"
-
 # define NO	1
 # define SO	2
 # define WE	3

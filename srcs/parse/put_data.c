@@ -10,8 +10,12 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "parse.h"
 #include <stdio.h>
+#include <stdlib.h>
+#include "libft.h"
+#include "struct.h"
+#include "error.h"
+#include "parse.h"
 
 static int	value_valid_check(char *line)
 {

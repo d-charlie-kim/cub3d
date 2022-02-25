@@ -10,7 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "parse.h"
+#include <unistd.h>
+#include "struct.h"
 
 void	data_init(t_data *data)
 {

@@ -13,10 +13,6 @@
 #ifndef ERROR_H
 # define ERROR_H
 
-# include <unistd.h>
-# include <stdlib.h>
-# include "libft.h"
-
 void	print_err_and_exit(char *str);
 
 #endif

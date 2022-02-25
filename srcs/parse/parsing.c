@@ -10,8 +10,13 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "parse.h"
 #include <stdio.h>
+#include <fcntl.h>
+#include "get_next_line.h"
+#include "error.h"
+#include "struct.h"
+#include "libft.h"
+#include "parse.h"
 
 static void	classify_data(t_data *data, char *line)
 {

@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "parse.h"
+#include "error.h"
 
 void	file_name_check(char *str, char *str2)
 {

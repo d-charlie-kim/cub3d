@@ -10,6 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <unistd.h>
+#include <stdlib.h>
+#include "libft.h"
 #include "error.h"
 
 void	print_err_and_exit(char *str)

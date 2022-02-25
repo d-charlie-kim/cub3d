@@ -43,6 +43,7 @@ PARSE_SRCS		= $(addprefix ./srcs/parse/, \
 
 # VALIDATE_SRCS	= $(addprefix ./srcs/validate/, \
 # 					)
+
 # DRAW_SRCS		= $(addprefix ./srcs/draw/, \
 # 					)
 # MOVE_SRCS		= $(addprefix ./srcs/move/, \
@@ -62,6 +63,7 @@ SRCS		= ./srcs/main.c \
 				$(PARSE_SRCS) \
 				$(UTILS_SRCS) \
 				$(ERROR_SRCS) \
+				$(VALIDATE_SRCS) \
 
 OBJS	= $(SRCS:.c=.o)
 
