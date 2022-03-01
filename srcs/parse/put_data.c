@@ -19,13 +19,37 @@
 
 static int	value_valid_check(char *line)
 {
-	int	i;
+	int		i;
+	int		size;
+	int		count;
 
 	i = 0;
-	/*
-		1. 숫자와 콤마 그리고 공백으로만 이루어져있는지 체크
-		2. 숫자가 255 범위 내에 있는지 사전 체크(자리수만 체크)
-	*/
+	size = 0;
+	count = 0;
+	while (line[i])
+	{
+		size = 0;
+		while (line[i] == ' ')
+			i++;
+		while (line[i] >= '0' && line[i] <= '9')
+		{
+			size++;
+			i++;
+		}
+		while (line[i] == ' ')
+			i++;
+		if (line[i] == ',')
+		{
+			i++;
+			count++;
+			if (size == 0 || size > 3)
+				return (1);
+		}
+		else if (line[i])
+			return (1);
+	}
+	if (count != 2 || size == 0 || size > 3)
+		return (1);
 	return (0);
 }
 

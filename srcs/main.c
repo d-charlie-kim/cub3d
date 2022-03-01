@@ -12,6 +12,7 @@
 
 #include <stdio.h>
 #include "struct.h"
+#include "validate.h"
 #include "parse.h"
 #include "error.h"
 
@@ -23,6 +24,7 @@ int	main(int argc, char **argv)
 		print_err_and_exit("Error\n : ARGUMENTS ERROR\n");
 	data_init(&data);
 	parsing(argv, &data);
+	// validate_data(&data);
 	//draw
 	return (0);
 }

@@ -13,6 +13,6 @@
 #ifndef VALIDATE_H
 # define VALIDATE_H
 
-
+void	validate_data(t_data *data);
 
 #endif

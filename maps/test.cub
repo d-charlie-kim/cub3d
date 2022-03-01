@@ -6,9 +6,9 @@ WE ./path_to_the_west_texture
 
 EA ./path_to_the_east_texture
 
-F 220,100,1
+F 220,110,1
 
-C 300,130,,0
+C 300,130,123
 
 
         1111111111111111111111111

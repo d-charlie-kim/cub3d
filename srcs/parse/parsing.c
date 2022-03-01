@@ -88,5 +88,5 @@ void	parsing(char **argv, t_data *data)
 	if (fd < 0)
 		print_err_and_exit("Error\n : OPEN ERROR\n");
 	get_data(fd, data);
-	print_test_code(data);
+	print_test_code(data); //////for test
 }

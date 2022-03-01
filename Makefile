@@ -63,7 +63,6 @@ SRCS		= ./srcs/main.c \
 				$(PARSE_SRCS) \
 				$(UTILS_SRCS) \
 				$(ERROR_SRCS) \
-				$(VALIDATE_SRCS) \
 
 OBJS	= $(SRCS:.c=.o)
 
