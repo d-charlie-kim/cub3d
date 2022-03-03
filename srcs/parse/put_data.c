@@ -108,6 +108,7 @@ void	put_map(t_data *data, char *line)
 	char	**new_map;
 
 	i = 0;
+	i = 0;
 	while (data->map_data && data->map_data[i])
 		i++;
 	new_map = (char **)malloc(sizeof(char *) * (i + 2));

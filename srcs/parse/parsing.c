@@ -18,7 +18,7 @@
 #include "libft.h"
 #include "parse.h"
 
-static void	classify_data(t_data *data, char *line)
+static int	classify_data(t_data *data, char *line)
 {
 	int	i;
 
@@ -26,9 +26,7 @@ static void	classify_data(t_data *data, char *line)
 	while (line[i] && line[i] == ' ')
 		i++;
 	if (line[i] == 0)
-		return ;
-	else if (line[i] == '1')
-		put_map(data, line);
+		return (0);
 	else if (!ft_strncmp(line, "NO ", 3))
 		put_data(data, NO, line + i + 3);
 	else if (!ft_strncmp(line, "SO ", 3))
@@ -42,22 +40,28 @@ static void	classify_data(t_data *data, char *line)
 	else if (!ft_strncmp(line, "C ", 2))
 		put_data(data, C, line + i + 2);
 	else
-		print_err_and_exit("Error\n : .cub FILE IS NOT VALID\n");
+		return (1);
+	return (0);
 }
 
 static void	get_data(int fd, t_data *data)
 {
 	char	*line;
 	int		ret;
+	int		flag;
 
 	line = NULL;
 	ret = 1;
+	flag = 0;
 	while (ret != 0)
 	{
 		ret = get_next_line(fd, &line);
 		if (ret == -1)
 			print_err_and_exit("Error\n : GNL ERROR\n");
-		classify_data(data, line);
+		if (flag == 0)
+			flag = classify_data(data, line);
+		if (flag == 1)
+			put_map(data, line);
 		free (line);
 	}
 }

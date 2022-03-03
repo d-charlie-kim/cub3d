@@ -24,7 +24,7 @@ int	main(int argc, char **argv)
 		print_err_and_exit("Error\n : ARGUMENTS ERROR\n");
 	data_init(&data);
 	parsing(argv, &data);
-	// validate_data(&data);
+	validate_data(&data);
 	//draw
 	return (0);
 }

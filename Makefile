@@ -14,11 +14,11 @@ NAME		= cub3d
 OS			= Mac
 
 CC			= gcc
-CFLAGS		= $(INCFLAGS) #$(WFLAGS) #$(GFLAGS)
+CFLAGS		= $(INCFLAGS) $(WFLAGS) #$(GFLAGS)
 WFLAGS		= -Wall -Wextra -Werror
 GFLAGS		= -g -fsanitize=address
 INCDIR		= includes
-INC			= -I$(INCDIR)
+INCFLAGS	= -I$(INCDIR)
 
 ifeq ($(OS), Linux)
 	MLXFLAGS = -lmlx -lbsd -lXext -lX11
@@ -41,8 +41,9 @@ PARSE_SRCS		= $(addprefix ./srcs/parse/, \
 					put_data.c \
 					)
 
-# VALIDATE_SRCS	= $(addprefix ./srcs/validate/, \
-# 					)
+VALIDATE_SRCS	= $(addprefix ./srcs/validate/, \
+					validate_data.c \
+					)
 
 # DRAW_SRCS		= $(addprefix ./srcs/draw/, \
 # 					)
@@ -63,16 +64,17 @@ SRCS		= ./srcs/main.c \
 				$(PARSE_SRCS) \
 				$(UTILS_SRCS) \
 				$(ERROR_SRCS) \
+				$(VALIDATE_SRCS) \
 
 OBJS	= $(SRCS:.c=.o)
 
-%.o		:	%.c
-		$(CC) $(CFLAGS) $(INC) -c $< -o $@
-
 all			: $(NAME)
 
+%.o		:	%.c
+		$(CC) $(CFLAGS) -c $< -o $@
+
 $(NAME)		: $(MLX) $(OBJS)
-	$(CC) $(OBJS) $(INC) $(CFLAGS) -o $@
+	$(CC) $(OBJS) $(CFLAGS) -o $@
 # $(MLXFLAGS) 뺌
 
 $(MLX)		:
