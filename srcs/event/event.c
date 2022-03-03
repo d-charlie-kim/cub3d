@@ -1,24 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   draw.h                                             :+:      :+:    :+:   */
+/*   event.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaejeong <jaejeong@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/24 17:20:01 by dokkim            #+#    #+#             */
-/*   Updated: 2022/03/03 13:46:57 by jaejeong         ###   ########.fr       */
+/*   Created: 2022/03/03 13:44:25 by jaejeong          #+#    #+#             */
+/*   Updated: 2022/03/03 13:44:33 by jaejeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DRAW_H
-# define DRAW_H
+#include "struct.h"
 
-# define WIDTH 900
-# define HEIGHT 600
+static int	key_hook()
+{
 
-void	create_new_image(t_mlx *mlx);
-void	my_mlx_pixel_input(t_mlx *mlx, int x, int y, int color);
+}
 
-void	draw(t_data *data);
+static int	mouse_hook()
+{
+	
+}
 
-#endif
+void	get_event(t_data *data)
+{
+	mlx_key_hook(data->mlx.window, key_hook, data);
+	mlx_mouse_hook(data->mlx.window, mouse_hook, data);
+	mlx_loop(data->mlx.mlx_ptr);
+}
