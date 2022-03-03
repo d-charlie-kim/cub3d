@@ -66,22 +66,22 @@ static void	get_data(int fd, t_data *data)
 	}
 }
 
-void	print_test_code(t_data *data)
-{
-	printf("NO ::: %s\n", data->textures.wall_north);
-	printf("SO ::: %s\n", data->textures.wall_south);
-	printf("WE ::: %s\n", data->textures.wall_west);
-	printf("EA ::: %s\n", data->textures.wall_east);
-	printf("F :::: R : %d, G : %d, B : %d\n", data->textures.floor[0], data->textures.floor[1], data->textures.floor[2]);
-	printf("C :::: R : %d, G : %d, B : %d\n", data->textures.ceilling[0], data->textures.ceilling[1], data->textures.ceilling[2]);
+// void	print_test_code(t_data *data)
+// {
+// 	printf("NO ::: %s\n", data->textures.wall_north);
+// 	printf("SO ::: %s\n", data->textures.wall_south);
+// 	printf("WE ::: %s\n", data->textures.wall_west);
+// 	printf("EA ::: %s\n", data->textures.wall_east);
+// 	printf("F :::: R : %d, G : %d, B : %d\n", data->textures.floor[0], data->textures.floor[1], data->textures.floor[2]);
+// 	printf("C :::: R : %d, G : %d, B : %d\n", data->textures.ceilling[0], data->textures.ceilling[1], data->textures.ceilling[2]);
 
-	int i = 0;
-	while (data->map_data[i])
-	{
-		printf("MAP :::::::::: %s\n", data->map_data[i]);
-		i++;
-	}
-}
+// 	int i = 0;
+// 	while (data->map_data[i])
+// 	{
+// 		printf("MAP :::::::::: %s\n", data->map_data[i]);
+// 		i++;
+// 	}
+// }
 
 void	parsing(char **argv, t_data *data)
 {
@@ -92,5 +92,5 @@ void	parsing(char **argv, t_data *data)
 	if (fd < 0)
 		print_err_and_exit("Error\n : OPEN ERROR\n");
 	get_data(fd, data);
-	print_test_code(data); //////for test
+	// print_test_code(data); //////for test
 }

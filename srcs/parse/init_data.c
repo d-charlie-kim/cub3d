@@ -12,24 +12,25 @@
 
 #include <unistd.h>
 #include <errno.h>
+#include <stdlib.h>
 #include "draw.h"
 #include "struct.h"
 
-static void	setting_mlx(t_mlx *mlx)
-{
-	mlx->mlx_ptr = mlx_init();
-	if (!(mlx->mlx_ptr))
-		exit(ENOMEM);
-	mlx->window = mlx_new_window(mlx->mlx_ptr, WIDTH, HEIGHT, "cub3d");
-	if (!(mlx->window))
-		exit(ENOMEM);
-}
+// static void	setting_mlx(t_mlx *mlx)
+// {
+// 	mlx->mlx_ptr = mlx_init();
+// 	if (!(mlx->mlx_ptr))
+// 		exit(ENOMEM);
+// 	mlx->window = mlx_new_window(mlx->mlx_ptr, WIDTH, HEIGHT, "cub3d");
+// 	if (!(mlx->window))
+// 		exit(ENOMEM);
+// }
 
 void	data_init(t_data *data)
 {
 	int	i;
 
-	setting_mlx(&(data->mlx));
+	// setting_mlx(&(data->mlx));
 	data->textures.wall_north = 0;
 	data->textures.wall_east = 0;
 	data->textures.wall_west = 0;

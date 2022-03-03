@@ -15,6 +15,7 @@
 #include "validate.h"
 #include "parse.h"
 #include "error.h"
+#include "draw.h"
 
 int	main(int argc, char **argv)
 {
@@ -25,6 +26,6 @@ int	main(int argc, char **argv)
 	data_init(&data);
 	parsing(argv, &data);
 	validate_data(&data);
-	draw(&data);
+	// draw(&data);
 	return (0);
 }

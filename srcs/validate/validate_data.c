@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include <fcntl.h>
+#include <unistd.h>
 #include "struct.h"
 #include "error.h"
 #include "libft.h"

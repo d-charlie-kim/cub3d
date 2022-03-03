@@ -45,13 +45,13 @@ VALIDATE_SRCS	= $(addprefix ./srcs/validate/, \
 					validate_data.c \
 					)
 
-DRAW_SRCS		= $(addprefix ./srcs/draw/, \
-					image.c
- 					)
+# DRAW_SRCS		= $(addprefix ./srcs/draw/, \
+# 					image.c \
+# 					)
 
-EVENT_SRCS		= $(addprefix ./srcs/event/, \
-					event.c
- 					)
+# EVENT_SRCS		= $(addprefix ./srcs/event/, \
+# 					event.c \
+# 					)
 
 # MOVE_SRCS		= $(addprefix ./srcs/move/, \
 # 					)
@@ -72,7 +72,7 @@ SRCS		= ./srcs/main.c \
 				$(ERROR_SRCS) \
 				$(VALIDATE_SRCS) \
 				$(DRAW_SRCS) \
-				$(EVENT_SRCS)
+				$(EVENT_SRCS) \
 
 OBJS	= $(SRCS:.c=.o)
 

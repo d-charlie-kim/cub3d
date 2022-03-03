@@ -18,6 +18,8 @@
 		"unordered_map": "c",
 		"utility": "c",
 		"vector": "c",
-		"unistd.h": "c"
+		"unistd.h": "c",
+		"mlx.h": "c",
+		"draw.h": "c"
 	}
 }
