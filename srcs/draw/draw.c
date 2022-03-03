@@ -1,24 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   draw.h                                             :+:      :+:    :+:   */
+/*   draw.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaejeong <jaejeong@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/24 17:20:01 by dokkim            #+#    #+#             */
-/*   Updated: 2022/03/03 13:46:57 by jaejeong         ###   ########.fr       */
+/*   Created: 2022/03/03 13:27:17 by jaejeong          #+#    #+#             */
+/*   Updated: 2022/03/03 14:07:18 by jaejeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DRAW_H
-# define DRAW_H
+#include "draw.h"
+#include "struct.h"
+#include "event.h"
 
-# define WIDTH 900
-# define HEIGHT 600
+static void	set_player_position(t_data *data)
+{
+	char	dir;
+	int		x;
+	int		y;
 
-void	create_new_image(t_mlx *mlx);
-void	my_mlx_pixel_input(t_mlx *mlx, int x, int y, int color);
+	find_player_and_dir(&dir, &x, &y);
+	set_player_dir(&(data->player), dir);
+	data->player.pos_x = (double)x + 0.5;
+	data->player.pos_y = (double)y + 0.5;
+}
 
-void	draw(t_data *data);
-
-#endif
+void	draw(t_data *data)
+{
+	set_player_position(data);
+	make_first_image(data);
+	get_event(data);
+}

@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: dokkim <dokkim@student.42seoul.kr>         +#+  +:+       +#+         #
+#    By: jaejeong <jaejeong@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/24 15:59:26 by dokkim            #+#    #+#              #
-#    Updated: 2022/02/25 17:25:06 by dokkim           ###   ########.fr        #
+#    Updated: 2022/03/03 13:52:24 by jaejeong         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,8 +44,14 @@ PARSE_SRCS		= $(addprefix ./srcs/parse/, \
 # VALIDATE_SRCS	= $(addprefix ./srcs/validate/, \
 # 					)
 
-# DRAW_SRCS		= $(addprefix ./srcs/draw/, \
-# 					)
+DRAW_SRCS		= $(addprefix ./srcs/draw/, \
+					image.c
+ 					)
+
+EVENT_SRCS		= $(addprefix ./srcs/event/, \
+					event.c
+ 					)
+
 # MOVE_SRCS		= $(addprefix ./srcs/move/, \
 # 					)
 
@@ -63,6 +69,8 @@ SRCS		= ./srcs/main.c \
 				$(PARSE_SRCS) \
 				$(UTILS_SRCS) \
 				$(ERROR_SRCS) \
+				$(DRAW_SRCS) \
+				$(EVENT_SRCS)
 
 OBJS	= $(SRCS:.c=.o)
 
