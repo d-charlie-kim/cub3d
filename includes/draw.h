@@ -6,7 +6,7 @@
 /*   By: jaejeong <jaejeong@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/24 17:20:01 by dokkim            #+#    #+#             */
-/*   Updated: 2022/03/03 13:46:57 by jaejeong         ###   ########.fr       */
+/*   Updated: 2022/03/04 18:49:01 by jaejeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,32 @@
 # define WIDTH 900
 # define HEIGHT 600
 
+typedef struct	s_ray
+{
+	int		side;
+	int		step_x;
+	int		step_y;
+	int		map_x;
+	int		map_y;
+	double	dir_x;
+	double	dir_y;
+	double	side_dist_x;
+	double	side_dist_y;
+	double	delta_dist_x;
+	double	delta_dist_y;
+}	t_ray;
+
+void	set_player_position(t_data *data);
+
+void	draw_line(t_mlx *mlx, int x, double distance);
 void	draw(t_data *data);
+
+void	calculate_delta_distance(t_ray *ray);
+void	calculate_side_distance(t_data *data, t_ray *ray);
+
+void	show_image(t_data *data);
 
 void	create_new_image(t_mlx *mlx);
 void	my_mlx_pixel_input(t_mlx *mlx, int x, int y, int color);
-
-void	show_image(t_data *data);
 
 #endif

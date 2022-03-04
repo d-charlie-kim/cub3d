@@ -6,7 +6,7 @@
 #    By: jaejeong <jaejeong@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/24 15:59:26 by dokkim            #+#    #+#              #
-#    Updated: 2022/03/03 13:52:24 by jaejeong         ###   ########.fr        #
+#    Updated: 2022/03/04 18:48:15 by jaejeong         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,11 +48,13 @@ VALIDATE_SRCS	= $(addprefix ./srcs/validate/, \
 					validate_data.c \
 					)
 
-# DRAW_SRCS		= $(addprefix ./srcs/draw/, \
-# 					draw_utils.c \
+DRAW_SRCS		= $(addprefix ./srcs/draw/, \
+ 					draw_utils.c \
 					draw.c \
-					calculate.c
-# 					)
+					calculate.c \
+					image.c \
+					set_player.c \
+ 					)
 
 # EVENT_SRCS		= $(addprefix ./srcs/event/, \
 # 					event.c \
@@ -84,7 +86,7 @@ OBJS	= $(SRCS:.c=.o)
 all			: $(NAME)
 
 %.o		:	%.c
-		$(CC) $(CFLAGS) -c $< -o $@
+		$(CC) $(CFLAGS) -c $< -o $@ -lm
 
 $(NAME)		: $(MLX) $(OBJS)
 	$(CC) $(OBJS) $(CFLAGS) -o $@
