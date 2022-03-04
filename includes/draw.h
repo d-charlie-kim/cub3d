@@ -13,12 +13,16 @@
 #ifndef DRAW_H
 # define DRAW_H
 
+# include "struct.h"
+
 # define WIDTH 900
 # define HEIGHT 600
+
+void	draw(t_data *data);
 
 void	create_new_image(t_mlx *mlx);
 void	my_mlx_pixel_input(t_mlx *mlx, int x, int y, int color);
 
-void	draw(t_data *data);
+void	show_image(t_data *data);
 
 #endif

@@ -28,7 +28,7 @@ static void	set_player_position(t_data *data)
 
 void	draw(t_data *data)
 {
-	set_player_position(data);
-	make_first_image(data);
-	get_event(data);
+	set_player_position(data);  // charlie
+	show_image(data);     // jaejeong
+	get_event(data);            // 나중에 같이
 }

@@ -27,7 +27,10 @@ else
 endif
 
 MLXDIR		= minilibx_opengl_20191021
-MLX			= $(MLXDIR)/libmlx.a
+
+ifeq ($(OS), Mac)
+	MLX		= $(MLXDIR)/libmlx.a
+endif
 
 GNL_SRCS		= $(addprefix ./srcs/get_next_line/, \
 					get_next_line.c \
@@ -46,7 +49,9 @@ VALIDATE_SRCS	= $(addprefix ./srcs/validate/, \
 					)
 
 # DRAW_SRCS		= $(addprefix ./srcs/draw/, \
-# 					image.c \
+# 					draw_utils.c \
+					draw.c \
+					calculate.c
 # 					)
 
 # EVENT_SRCS		= $(addprefix ./srcs/event/, \
@@ -85,7 +90,7 @@ $(NAME)		: $(MLX) $(OBJS)
 	$(CC) $(OBJS) $(CFLAGS) -o $@
 
 $(MLX)		:
-	# make -C $(MLXDIR) all
+	make -C $(MLXDIR) all
 
 clean		:
 	$(RM) $(OBJS)
