@@ -14,21 +14,9 @@
 #include "struct.h"
 #include "event.h"
 
-static void	set_player_position(t_data *data)
-{
-	char	dir;
-	int		x;
-	int		y;
-
-	find_player_and_dir(&dir, &x, &y);
-	set_player_dir(&(data->player), dir);
-	data->player.pos_x = (double)x + 0.5;
-	data->player.pos_y = (double)y + 0.5;
-}
-
 void	draw(t_data *data)
 {
-	set_player_position(data);  // charlie
+	set_player_position(data);
 	show_image(data);     // jaejeong
 	get_event(data);            // 나중에 같이
 }
