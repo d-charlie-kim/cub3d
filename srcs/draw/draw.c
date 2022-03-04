@@ -6,13 +6,14 @@
 /*   By: jaejeong <jaejeong@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/03 13:27:17 by jaejeong          #+#    #+#             */
-/*   Updated: 2022/03/04 18:53:37 by jaejeong         ###   ########.fr       */
+/*   Updated: 2022/03/04 19:23:26 by jaejeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "draw.h"
 #include "struct.h"
 #include "event.h"
+#include <stdio.h>
 
 void	draw_line(t_mlx *mlx, int x, double distance)
 {

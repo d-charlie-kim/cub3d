@@ -6,7 +6,7 @@
 /*   By: jaejeong <jaejeong@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/04 16:35:02 by jaejeong          #+#    #+#             */
-/*   Updated: 2022/03/04 18:56:28 by jaejeong         ###   ########.fr       */
+/*   Updated: 2022/03/04 19:13:51 by jaejeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,5 +72,5 @@ void	show_image(t_data *data)
 		draw_line(&(data->mlx), x, perp_wall_dist);
 		x++;
 	}
-	mlx_put_image_to_window(data->mlx.mlx_ptr, data->mlx.window, data->mlx.image, WIDTH, HEIGHT);
+	mlx_put_image_to_window(data->mlx.mlx_ptr, data->mlx.window, data->mlx.image, 0, 0);
 }
