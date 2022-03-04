@@ -23,7 +23,7 @@ int	main(int argc, char **argv)
 
 	if (argc != 2)
 		print_err_and_exit("Error\n : ARGUMENTS ERROR\n");
-	data_init(&data);
+	init_data(&data);
 	parsing(argv, &data);
 	validate_data(&data);
 	// draw(&data);

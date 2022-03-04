@@ -20,7 +20,7 @@
 # define F	5
 # define C	6
 
-void	data_init(t_data *data);
+void	init_data(t_data *data);
 
 void	file_name_check(char *str, char *str2);
 

@@ -11,10 +11,10 @@
 # **************************************************************************** #
 
 NAME		= cub3d
-OS			= Mac
+OS			= Linux
 
 CC			= gcc
-CFLAGS		= $(INCFLAGS) $(WFLAGS) #$(GFLAGS)
+CFLAGS		= $(INCFLAGS) $(WFLAGS) $(MLXFLAGS) #$(GFLAGS)
 WFLAGS		= -Wall -Wextra -Werror
 GFLAGS		= -g -fsanitize=address
 INCDIR		= includes
@@ -83,7 +83,6 @@ all			: $(NAME)
 
 $(NAME)		: $(MLX) $(OBJS)
 	$(CC) $(OBJS) $(CFLAGS) -o $@
-# $(MLXFLAGS) 뺌
 
 $(MLX)		:
 	# make -C $(MLXDIR) all
