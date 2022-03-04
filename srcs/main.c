@@ -6,7 +6,7 @@
 /*   By: jaejeong <jaejeong@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/24 15:57:36 by dokkim            #+#    #+#             */
-/*   Updated: 2022/03/03 13:25:12 by jaejeong         ###   ########.fr       */
+/*   Updated: 2022/03/04 19:02:25 by jaejeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,6 @@ int	main(int argc, char **argv)
 	init_data(&data);
 	parsing(argv, &data);
 	validate_data(&data);
-	// draw(&data);
+	draw(&data);
 	return (0);
 }
