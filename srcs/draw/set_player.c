@@ -31,10 +31,10 @@ static void	find_player(char ***map_data, char *dir, int *x, int *y)
 			if (map[i][j] == 'N' || map[i][j] == 'E' || \
 				map[i][j] == 'W' || map[i][j] == 'S')
 			{
-				dir = map[i][j];
+				*dir = map[i][j];
 				map[i][j] = 0;
-				x = i;
-				y = j;
+				*x = i;
+				*y = j;
 				return ;
 			}
 			j++;
