@@ -14,7 +14,7 @@ NAME		= cub3d
 OS			= Linux
 
 CC			= gcc
-CFLAGS		= $(INCFLAGS) $(WFLAGS) $(MLXFLAGS) #$(GFLAGS)
+CFLAGS		= $(INCFLAGS) $(WFLAGS) $(MLXFLAGS) $(GFLAGS)
 WFLAGS		= -Wall -Wextra -Werror
 GFLAGS		= -g -fsanitize=address
 INCDIR		= includes

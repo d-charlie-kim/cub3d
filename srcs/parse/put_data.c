@@ -72,10 +72,10 @@ static void	get_color_value(int *texture, char *line)
 			i++;
 			size++;
 		}
-		temp = (char *)malloc(sizeof(char) * (size));
+		temp = (char *)malloc(sizeof(char) * (size + 1));
 		if (!temp)
 			print_err_and_exit("Error\n : CANT ALLOCATE MEMORY\n");
-		ft_strlcpy(temp, line + i - size, size + 1);
+		ft_strlcpy(temp, line + i - size, size);
 		texture[index] = ft_atoi(temp);
 		free (temp);
 		index++;
