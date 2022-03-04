@@ -6,13 +6,14 @@
 /*   By: jaejeong <jaejeong@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/04 16:35:02 by jaejeong          #+#    #+#             */
-/*   Updated: 2022/03/04 18:49:27 by jaejeong         ###   ########.fr       */
+/*   Updated: 2022/03/04 18:56:28 by jaejeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "struct.h"
 #include "draw.h"
 #include <math.h>
+#include <mlx.h>
 
 static void	set_ray(t_data *data, t_ray *ray, double camera_x)
 {
@@ -71,4 +72,5 @@ void	show_image(t_data *data)
 		draw_line(&(data->mlx), x, perp_wall_dist);
 		x++;
 	}
+	mlx_put_image_to_window(data->mlx.mlx_ptr, data->mlx.window, data->mlx.image, WIDTH, HEIGHT);
 }
