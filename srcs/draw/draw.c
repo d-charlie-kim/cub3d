@@ -6,7 +6,7 @@
 /*   By: jaejeong <jaejeong@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/03 13:27:17 by jaejeong          #+#    #+#             */
-/*   Updated: 2022/03/05 10:45:35 by jaejeong         ###   ########.fr       */
+/*   Updated: 2022/03/05 11:10:56 by jaejeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,14 @@ void	draw_line(t_mlx *mlx, t_ray *ray, int x, double distance)
 		draw_end = HEIGHT - 1;
 	while (draw_start <= draw_end)
 	{
-		if (ray->side == 0)
+		if (ray->side == 0 && ray->step_x == 1)
 			my_mlx_pixel_input(mlx, x, draw_start, 0x00FF00FF);
-		else
+		else if (ray->side == 0 && ray->step_x == -1)
 			my_mlx_pixel_input(mlx, x, draw_start, 0x00FFFF00);
+		else if (ray->side == 1 && ray->step_y == 1)
+			my_mlx_pixel_input(mlx, x, draw_start, 0x0000FFFF);
+		else if (ray->side == 1 && ray->step_y == -1)
+			my_mlx_pixel_input(mlx, x, draw_start, 0x0000FF00);
 		draw_start++;
 	}
 }
