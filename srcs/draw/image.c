@@ -6,7 +6,7 @@
 /*   By: jaejeong <jaejeong@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/04 16:35:02 by jaejeong          #+#    #+#             */
-/*   Updated: 2022/03/05 10:44:40 by jaejeong         ###   ########.fr       */
+/*   Updated: 2022/03/05 11:02:06 by jaejeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,9 +70,10 @@ void	show_image(t_data *data)
 	{
 		camera_x = 2 * x / (double)WIDTH - 1;
 		set_ray(data, &ray, camera_x);
+		printf("%d %d\n", ray.step_x, ray.step_y);
 		check_hit_point(data, &ray);
+		//printf("%d %d %d\n", x, ray.map_x, ray.map_y);
 		perp_wall_dist = get_vertical_distance_to_wall(data, &ray);
-		printf("%d, %lf\n", x, perp_wall_dist);
 		draw_line(&(data->mlx), &ray, x, perp_wall_dist);
 		x++;
 	}

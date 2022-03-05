@@ -6,7 +6,7 @@
 /*   By: jaejeong <jaejeong@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/04 16:35:06 by jaejeong          #+#    #+#             */
-/*   Updated: 2022/03/04 23:02:43 by jaejeong         ###   ########.fr       */
+/*   Updated: 2022/03/05 11:04:01 by jaejeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void	calculate_side_distance(t_data *data, t_ray *ray)
 		ray->step_x = 1;
 		ray->side_dist_x = (ray->map_x + 1.0 - data->player.pos_x) * ray->delta_dist_x;
 	}
-	if (ray->dir_x < 0)
+	if (ray->dir_y < 0)
 	{
 		ray->step_y = -1;
 		ray->side_dist_y = (data->player.pos_y - ray->map_y) * ray->delta_dist_y;
