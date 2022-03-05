@@ -1,10 +1,10 @@
-NO ./maps/NO.xpm
+NO ./maps/NORTH.xpm
 
-SO ./maps/SO.xpm
+SO ./maps/SOUTH.xpm
 
-WE ./maps/WE.xpm
+WE ./maps/WEST.xpm
 
-EA ./maps/EA.xpm
+EA ./maps/EAST.xpm
 
 F 123,123,123
 

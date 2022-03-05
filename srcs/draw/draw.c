@@ -60,7 +60,7 @@ void	draw_line(t_mlx *mlx, t_ray *ray, int x, double distance)
 			my_mlx_pixel_input(mlx, x, draw_start, 0x00FFFF00); // 동쪽 벽
 		else if (ray->side == 1 && ray->step_y == 1)
 			my_mlx_pixel_input(mlx, x, draw_start, 0x00000000); // 북쪽 벽
-		else if (ray->side == 1 && ray->step_y == -1)
+		else if (ray->side == 1 && ray->step_y == -1)	
 			my_mlx_pixel_input(mlx, x, draw_start, 0x0000FF00); // 남쪽 벽
 		draw_start++;
 	}
