@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   put_data.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dokkim <dokkim@student.42seoul.kr>         +#+  +:+       +#+        */
+/*   By: jaejeong <jaejeong@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/24 20:37:02 by dokkim            #+#    #+#             */
-/*   Updated: 2022/02/25 18:37:28 by dokkim           ###   ########.fr       */
+/*   Updated: 2022/03/05 12:46:56 by jaejeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ static void	get_color_value(int *texture, char *line)
 		temp = (char *)malloc(sizeof(char) * (size + 1));
 		if (!temp)
 			print_err_and_exit("Error\n : CANT ALLOCATE MEMORY\n");
-		ft_strlcpy(temp, line + i - size, size);
+		ft_strlcpy(temp, line + i - size, size + 1);
 		texture[index] = ft_atoi(temp);
 		free (temp);
 		index++;

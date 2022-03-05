@@ -6,7 +6,7 @@
 /*   By: jaejeong <jaejeong@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/03 13:16:55 by jaejeong          #+#    #+#             */
-/*   Updated: 2022/03/05 12:36:09 by jaejeong         ###   ########.fr       */
+/*   Updated: 2022/03/05 12:49:38 by jaejeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,13 @@ void	my_mlx_pixel_input(t_mlx *mlx, int x, int y, int color)
 
 int	get_rgb_code(int color[4])
 {
-	(void)color;
-	return (0x00AAAAAA);
+	int	ret;
+
+	ret = 0;
+	ret += color[0];
+	ret <<= 8;
+	ret += color[1];
+	ret <<= 8;
+	ret += color[2];
+	return (ret);
 }
