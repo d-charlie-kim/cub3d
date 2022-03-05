@@ -6,7 +6,7 @@
 /*   By: jaejeong <jaejeong@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/04 16:35:02 by jaejeong          #+#    #+#             */
-/*   Updated: 2022/03/05 11:02:06 by jaejeong         ###   ########.fr       */
+/*   Updated: 2022/03/05 12:22:17 by jaejeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,6 @@
 #include "draw.h"
 #include <math.h>
 #include <mlx.h>
-
-
-#include <stdio.h>
 
 static void	set_ray(t_data *data, t_ray *ray, double camera_x)
 {
@@ -65,14 +62,13 @@ void	show_image(t_data *data)
 	t_ray	ray;
 
 	create_new_image(&(data->mlx));
+	put_color_floor_and_ceilling(data);
 	x = 0;
 	while (x < WIDTH)
 	{
 		camera_x = 2 * x / (double)WIDTH - 1;
 		set_ray(data, &ray, camera_x);
-		printf("%d %d\n", ray.step_x, ray.step_y);
 		check_hit_point(data, &ray);
-		//printf("%d %d %d\n", x, ray.map_x, ray.map_y);
 		perp_wall_dist = get_vertical_distance_to_wall(data, &ray);
 		draw_line(&(data->mlx), &ray, x, perp_wall_dist);
 		x++;

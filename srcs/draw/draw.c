@@ -6,14 +6,38 @@
 /*   By: jaejeong <jaejeong@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/03 13:27:17 by jaejeong          #+#    #+#             */
-/*   Updated: 2022/03/05 11:10:56 by jaejeong         ###   ########.fr       */
+/*   Updated: 2022/03/05 12:28:28 by jaejeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "draw.h"
 #include "struct.h"
 #include "event.h"
-#include <stdio.h>
+
+void	put_color_floor_and_ceilling(t_data *data)
+{
+	int	i;
+	int	j;
+	int	floor_color;
+	int	ceilling_color;
+
+	floor_color = get_rgb_code(data->textures.floor);
+	ceilling_color = get_rgb_code(data->textures.ceilling);
+	i = 0;
+	while (i < WIDTH)
+	{
+		j = 0;
+		while (j < HEIGHT)
+		{
+			if (j < HEIGHT / 2)
+				my_mlx_pixel_input(&(data->mlx), i, j, floor_color);
+			else
+				my_mlx_pixel_input(&(data->mlx), i, j, ceilling_color);
+			j++;
+		}
+		i++;
+	}
+}
 
 void	draw_line(t_mlx *mlx, t_ray *ray, int x, double distance)
 {

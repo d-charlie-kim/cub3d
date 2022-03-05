@@ -6,7 +6,7 @@
 /*   By: jaejeong <jaejeong@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/03 13:16:55 by jaejeong          #+#    #+#             */
-/*   Updated: 2022/03/04 18:47:42 by jaejeong         ###   ########.fr       */
+/*   Updated: 2022/03/05 12:36:09 by jaejeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,4 +30,10 @@ void	my_mlx_pixel_input(t_mlx *mlx, int x, int y, int color)
 	pixel_point = mlx->image_addr
 		+ (y * mlx->line_size + x * (mlx->bits_per_pixel / 8));
 	*(unsigned int *)pixel_point = color;
+}
+
+int	get_rgb_code(int color[4])
+{
+	(void)color;
+	return (0x00AAAAAA);
 }
