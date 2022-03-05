@@ -6,7 +6,7 @@
 /*   By: jaejeong <jaejeong@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/24 17:20:01 by dokkim            #+#    #+#             */
-/*   Updated: 2022/03/04 18:49:01 by jaejeong         ###   ########.fr       */
+/*   Updated: 2022/03/05 10:44:54 by jaejeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ typedef struct	s_ray
 
 void	set_player_position(t_data *data);
 
-void	draw_line(t_mlx *mlx, int x, double distance);
+void	draw_line(t_mlx *mlx, t_ray *ray, int x, double distance);
 void	draw(t_data *data);
 
 void	calculate_delta_distance(t_ray *ray);

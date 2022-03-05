@@ -6,7 +6,7 @@
 /*   By: jaejeong <jaejeong@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/04 16:35:06 by jaejeong          #+#    #+#             */
-/*   Updated: 2022/03/04 18:48:54 by jaejeong         ###   ########.fr       */
+/*   Updated: 2022/03/04 23:02:43 by jaejeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,13 @@ void	calculate_delta_distance(t_ray *ray)
 	else if (ray->dir_x == 0)
 		ray->delta_dist_x = 1;
 	else
-		ray->delta_dist_x = fabs(ray->dir_x);
+		ray->delta_dist_x = fabs(1 / ray->dir_x);
 	if (ray->dir_x == 0)
 		ray->delta_dist_y = 0;
 	else if (ray->dir_y == 0)
 		ray->delta_dist_y = 1;
 	else
-		ray->delta_dist_y = fabs(ray->dir_y);
+		ray->delta_dist_y = fabs(1 / ray->dir_y);
 }
 
 void	calculate_side_distance(t_data *data, t_ray *ray)

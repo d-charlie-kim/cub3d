@@ -6,7 +6,7 @@
 /*   By: jaejeong <jaejeong@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/04 16:35:02 by jaejeong          #+#    #+#             */
-/*   Updated: 2022/03/04 19:13:51 by jaejeong         ###   ########.fr       */
+/*   Updated: 2022/03/05 10:44:40 by jaejeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 #include "draw.h"
 #include <math.h>
 #include <mlx.h>
+
+
+#include <stdio.h>
 
 static void	set_ray(t_data *data, t_ray *ray, double camera_x)
 {
@@ -41,7 +44,7 @@ static void	check_hit_point(t_data *data, t_ray *ray)
 			ray->map_y += ray->step_y;
 			ray->side = 1;
 		}
-		if ((data->map_data)[ray->map_x][ray->map_y] > 0)
+		if ((data->map_data)[ray->map_y][ray->map_x] == '1')
 			break ;
 	}
 }
@@ -49,9 +52,9 @@ static void	check_hit_point(t_data *data, t_ray *ray)
 static double	get_vertical_distance_to_wall(t_data *data, t_ray *ray)
 {
 	if (ray->side == 0)
-		return (ray->map_x - data->player.pos_x + (1 - ray->step_x) / 2 / ray->dir_x);
+		return ((ray->map_x - data->player.pos_x + (1 - ray->step_x) / 2) / ray->dir_x);
 	else
-		return (ray->map_y - data->player.pos_y + (1 - ray->step_y) / 2 / ray->dir_y);
+		return ((ray->map_y - data->player.pos_y + (1 - ray->step_y) / 2) / ray->dir_y);
 }
 
 void	show_image(t_data *data)
@@ -65,11 +68,12 @@ void	show_image(t_data *data)
 	x = 0;
 	while (x < WIDTH)
 	{
-		camera_x = 2 * x / (double)WIDTH;
+		camera_x = 2 * x / (double)WIDTH - 1;
 		set_ray(data, &ray, camera_x);
 		check_hit_point(data, &ray);
 		perp_wall_dist = get_vertical_distance_to_wall(data, &ray);
-		draw_line(&(data->mlx), x, perp_wall_dist);
+		printf("%d, %lf\n", x, perp_wall_dist);
+		draw_line(&(data->mlx), &ray, x, perp_wall_dist);
 		x++;
 	}
 	mlx_put_image_to_window(data->mlx.mlx_ptr, data->mlx.window, data->mlx.image, 0, 0);

@@ -6,7 +6,7 @@
 /*   By: jaejeong <jaejeong@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/24 17:19:07 by dokkim            #+#    #+#             */
-/*   Updated: 2022/03/04 19:02:54 by jaejeong         ###   ########.fr       */
+/*   Updated: 2022/03/04 22:45:18 by jaejeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ static void	setting_mlx(t_mlx *mlx)
 	mlx->window = mlx_new_window(mlx->mlx_ptr, WIDTH, HEIGHT, "cub3d");
 	if (!(mlx->window))
 		exit(ENOMEM);
+	mlx->image = NULL;
 }
 
 void	init_data(t_data *data)

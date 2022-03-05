@@ -6,7 +6,7 @@
 /*   By: jaejeong <jaejeong@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/04 17:38:03 by jaejeong          #+#    #+#             */
-/*   Updated: 2022/03/04 17:38:04 by jaejeong         ###   ########.fr       */
+/*   Updated: 2022/03/04 22:38:24 by jaejeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,8 @@ static void	find_player(char ***map_data, char *dir, int *x, int *y)
 			{
 				*dir = map[i][j];
 				map[i][j] = 0;
-				*x = i;
-				*y = j;
+				*x = j;
+				*y = i;
 				return ;
 			}
 			j++;
