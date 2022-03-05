@@ -55,13 +55,13 @@ void	draw_line(t_mlx *mlx, t_ray *ray, int x, double distance)
 	while (draw_start <= draw_end)
 	{
 		if (ray->side == 0 && ray->step_x == 1)
-			my_mlx_pixel_input(mlx, x, draw_start, 0x00FF00FF);
+			my_mlx_pixel_input(mlx, x, draw_start, 0x00FF00FF); // 서쪽 벽
 		else if (ray->side == 0 && ray->step_x == -1)
-			my_mlx_pixel_input(mlx, x, draw_start, 0x00FFFF00);
+			my_mlx_pixel_input(mlx, x, draw_start, 0x00FFFF00); // 동쪽 벽
 		else if (ray->side == 1 && ray->step_y == 1)
-			my_mlx_pixel_input(mlx, x, draw_start, 0x0000FFFF);
+			my_mlx_pixel_input(mlx, x, draw_start, 0x00000000); // 북쪽 벽
 		else if (ray->side == 1 && ray->step_y == -1)
-			my_mlx_pixel_input(mlx, x, draw_start, 0x0000FF00);
+			my_mlx_pixel_input(mlx, x, draw_start, 0x0000FF00); // 남쪽 벽
 		draw_start++;
 	}
 }
