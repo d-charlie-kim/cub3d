@@ -6,7 +6,7 @@
 /*   By: jaejeong <jaejeong@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/04 17:38:03 by jaejeong          #+#    #+#             */
-/*   Updated: 2022/03/04 22:38:24 by jaejeong         ###   ########.fr       */
+/*   Updated: 2022/03/05 23:05:47 by jaejeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,21 +48,21 @@ static void	set_player_dir(t_player *player, char dir)
 	if (dir == 'N')
 	{
 		player->dir_x = 0;
-		player->dir_y = -1;
+		player->dir_y = -0.5;
 	}
 	else if (dir == 'S')
 	{
 		player->dir_x = 0;
-		player->dir_y = 1;
+		player->dir_y = 0.5;
 	}
 	else if (dir == 'W')
 	{
-		player->dir_x = -1;
+		player->dir_x = -0.5;
 		player->dir_y = 0;
 	}
 	else if (dir == 'E')
 	{
-		player->dir_x = 1;
+		player->dir_x = 0.5;
 		player->dir_y = 0;
 	}
 }
