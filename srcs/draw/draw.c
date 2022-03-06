@@ -6,7 +6,7 @@
 /*   By: jaejeong <jaejeong@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/03 13:27:17 by jaejeong          #+#    #+#             */
-/*   Updated: 2022/03/06 13:01:58 by jaejeong         ###   ########.fr       */
+/*   Updated: 2022/03/06 13:12:01 by jaejeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,5 @@ void	draw(t_data *data)
 {
 	set_player_position(data);
 	show_image(data);     // jaejeong
-	while (1);
-	//get_event(data);            // 나중에 같이
+	get_event(data);            // 나중에 같이
 }

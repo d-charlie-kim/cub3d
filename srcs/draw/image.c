@@ -6,7 +6,7 @@
 /*   By: jaejeong <jaejeong@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/04 16:35:02 by jaejeong          #+#    #+#             */
-/*   Updated: 2022/03/05 12:22:17 by jaejeong         ###   ########.fr       */
+/*   Updated: 2022/03/06 13:22:25 by jaejeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ static void	set_ray(t_data *data, t_ray *ray, double camera_x)
 	ray->dir_y = data->player.dir_y + data->player.plane_y * camera_x;
 	ray->map_x = (int)(data->player.pos_x);
 	ray->map_y = (int)(data->player.pos_y);
-	calculate_delta_distance(ray);
-	calculate_side_distance(data, ray);
+	get_delta_distance(ray);
+	get_side_distance(data, ray);
 }
 
 static void	check_hit_point(t_data *data, t_ray *ray)
