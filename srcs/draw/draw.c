@@ -6,7 +6,7 @@
 /*   By: jaejeong <jaejeong@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/03 13:27:17 by jaejeong          #+#    #+#             */
-/*   Updated: 2022/03/05 12:28:28 by jaejeong         ###   ########.fr       */
+/*   Updated: 2022/03/06 13:01:58 by jaejeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,9 @@ void	put_color_floor_and_ceilling(t_data *data)
 		while (j < HEIGHT)
 		{
 			if (j < HEIGHT / 2)
-				my_mlx_pixel_input(&(data->mlx), i, j, floor_color);
-			else
 				my_mlx_pixel_input(&(data->mlx), i, j, ceilling_color);
+			else
+				my_mlx_pixel_input(&(data->mlx), i, j, floor_color);
 			j++;
 		}
 		i++;
@@ -60,7 +60,7 @@ void	draw_line(t_mlx *mlx, t_ray *ray, int x, double distance)
 			my_mlx_pixel_input(mlx, x, draw_start, 0x00FFFF00); // 동쪽 벽
 		else if (ray->side == 1 && ray->step_y == 1)
 			my_mlx_pixel_input(mlx, x, draw_start, 0x00000000); // 북쪽 벽
-		else if (ray->side == 1 && ray->step_y == -1)	
+		else if (ray->side == 1 && ray->step_y == -1)
 			my_mlx_pixel_input(mlx, x, draw_start, 0x0000FF00); // 남쪽 벽
 		draw_start++;
 	}
