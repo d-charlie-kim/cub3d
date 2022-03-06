@@ -6,7 +6,7 @@
 /*   By: jaejeong <jaejeong@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/04 16:35:06 by jaejeong          #+#    #+#             */
-/*   Updated: 2022/03/06 13:33:06 by jaejeong         ###   ########.fr       */
+/*   Updated: 2022/03/06 14:19:44 by jaejeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ void	get_side_distance(t_data *data, t_ray *ray)
 	}
 }
 
-void	movement(t_data *data, int key_code)
+void	player_movement(t_data *data, int key_code)
 {
 	if (key_code == W)
 	{
@@ -80,9 +80,29 @@ void	movement(t_data *data, int key_code)
 	show_image(data);
 }
 
-void	rotation(t_data *data, int key_code)
+void	player_rotation(t_data *data, int key_code)
 {
-	(void)data;
-	(void)key_code;
-	return ;
+	double	old_dir_x;
+	double	old_plane_x;
+	double	rotSpeed = 0.1;
+
+	if (key_code == RIGHT)
+	{
+		old_dir_x = data->player.dir_x;
+		data->player.dir_x = data->player.dir_x * cos(rotSpeed) - data->player.dir_y * sin(rotSpeed);
+		data->player.dir_y = old_dir_x * sin(rotSpeed) + data->player.dir_y * cos(rotSpeed);
+		old_plane_x = data->player.plane_x;
+		data->player.plane_x = data->player.plane_x * cos(rotSpeed) - data->player.plane_y * sin(rotSpeed);
+		data->player.plane_y = old_plane_x * sin(rotSpeed) + data->player.plane_y * cos(rotSpeed);
+	}
+	else if (key_code == LEFT)
+	{
+		old_dir_x = data->player.dir_x;
+		data->player.dir_x = data->player.dir_x * cos(-rotSpeed) - data->player.dir_y * sin(-rotSpeed);
+		data->player.dir_y = old_dir_x * sin(-rotSpeed) + data->player.dir_y * cos(-rotSpeed);
+		old_plane_x = data->player.plane_x;
+		data->player.plane_x = data->player.plane_x * cos(-rotSpeed) - data->player.plane_y * sin(-rotSpeed);
+		data->player.plane_y = old_plane_x * sin(-rotSpeed) + data->player.plane_y * cos(-rotSpeed);
+	}
+	show_image(data);
 }

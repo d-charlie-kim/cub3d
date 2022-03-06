@@ -6,7 +6,7 @@
 /*   By: jaejeong <jaejeong@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/24 17:20:01 by dokkim            #+#    #+#             */
-/*   Updated: 2022/03/06 13:23:48 by jaejeong         ###   ########.fr       */
+/*   Updated: 2022/03/06 14:18:02 by jaejeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,8 @@ void	draw(t_data *data);
 
 void	get_delta_distance(t_ray *ray);
 void	get_side_distance(t_data *data, t_ray *ray);
-void	movement(t_data *data, int key_code);
-void	rotation(t_data *data, int key_code);
+void	player_movement(t_data *data, int key_code);
+void	player_rotation(t_data *data, int key_code);
 
 void	show_image(t_data *data);
 
