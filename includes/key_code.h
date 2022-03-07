@@ -6,7 +6,7 @@
 /*   By: jaejeong <jaejeong@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/06 13:13:48 by jaejeong          #+#    #+#             */
-/*   Updated: 2022/03/07 16:45:48 by jaejeong         ###   ########.fr       */
+/*   Updated: 2022/03/07 16:54:26 by jaejeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 #  define RIGHT 65363
 #  define UP 65362
 #  define DOWN 65364
-#  define W 1
+#  define W 119
 #  define A 97
 #  define S 115
 #  define D 100

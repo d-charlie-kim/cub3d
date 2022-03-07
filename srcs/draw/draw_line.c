@@ -6,7 +6,7 @@
 /*   By: jaejeong <jaejeong@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 14:37:32 by jaejeong          #+#    #+#             */
-/*   Updated: 2022/03/07 16:35:32 by jaejeong         ###   ########.fr       */
+/*   Updated: 2022/03/07 16:51:13 by jaejeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,7 +107,6 @@ void	draw_line(t_data *data, t_ray *ray, int x, double perp_wall_dist)
 	line_height = (int)(HEIGHT / perp_wall_dist);
 	wall_x = get_wall_x_coordinate(data, ray, perp_wall_dist);
 	tex_x = get_texture_x_coordinate(ray, wall_x, data->textures.tex_width[tex_index]);
-	printf("%lf %d\n", wall_x, tex_x);
 	draw_start = -line_height / 2 + HEIGHT / 2;
 	draw_end = line_height / 2 + HEIGHT / 2;
 	if (draw_start < 0)
