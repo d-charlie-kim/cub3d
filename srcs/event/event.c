@@ -6,16 +6,16 @@
 /*   By: dokkim <dokkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/03 13:44:25 by jaejeong          #+#    #+#             */
-/*   Updated: 2022/03/07 18:37:38 by dokkim           ###   ########.fr       */
+/*   Updated: 2022/03/07 18:46:59 by dokkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
+#include <stdlib.h>
 #include "struct.h"
 #include "key_code.h"
 #include "draw.h"
 #include <mlx.h>
-#include <stdio.h>
-#include <stdlib.h>
 
 static int	key_hook(int key_code, t_data *data)
 {

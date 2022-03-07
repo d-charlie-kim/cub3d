@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   draw_utils.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jaejeong <jaejeong@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dokkim <dokkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/03 13:16:55 by jaejeong          #+#    #+#             */
-/*   Updated: 2022/03/05 12:49:38 by jaejeong         ###   ########.fr       */
+/*   Updated: 2022/03/07 18:47:43 by dokkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <mlx.h>
 #include "struct.h"
 #include "draw.h"
-#include <mlx.h>
 
 void	create_new_image(t_mlx *mlx)
 {

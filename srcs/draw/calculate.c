@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   calculate.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jaejeong <jaejeong@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dokkim <dokkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/04 16:35:06 by jaejeong          #+#    #+#             */
-/*   Updated: 2022/03/07 16:53:38 by jaejeong         ###   ########.fr       */
+/*   Updated: 2022/03/07 18:47:29 by dokkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <math.h>
 #include "struct.h"
 #include "draw.h"
 #include "key_code.h"
-#include <math.h>
 
 void	get_delta_distance(t_ray *ray)
 {

@@ -3,30 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   draw_line.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jaejeong <jaejeong@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dokkim <dokkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 14:37:32 by jaejeong          #+#    #+#             */
-/*   Updated: 2022/03/07 16:51:13 by jaejeong         ###   ########.fr       */
+/*   Updated: 2022/03/07 18:48:16 by dokkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <math.h>
 #include "struct.h"
 #include "draw.h"
-#include <math.h>
-
-
-
-
-
-
-
-													#include <stdio.h>
-
-
-
-
-
-
 
 static int	get_texture_index(t_ray *ray)
 {

@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   image.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jaejeong <jaejeong@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dokkim <dokkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/04 16:35:02 by jaejeong          #+#    #+#             */
-/*   Updated: 2022/03/06 21:41:20 by jaejeong         ###   ########.fr       */
+/*   Updated: 2022/03/07 18:47:51 by dokkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "struct.h"
-#include "draw.h"
 #include <math.h>
 #include <mlx.h>
+#include "struct.h"
+#include "draw.h"
 
 static void	set_ray(t_data *data, t_ray *ray, double camera_x)
 {

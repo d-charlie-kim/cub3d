@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   draw.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jaejeong <jaejeong@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dokkim <dokkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/03 13:27:17 by jaejeong          #+#    #+#             */
-/*   Updated: 2022/03/07 14:37:17 by jaejeong         ###   ########.fr       */
+/*   Updated: 2022/03/07 18:47:46 by dokkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <math.h>
 #include "draw.h"
 #include "struct.h"
 #include "event.h"
-#include <math.h>
 
 #define TEXWIDTH 960
 #define TEXHEIGHT 1280
