@@ -6,7 +6,7 @@
 /*   By: dokkim <dokkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/24 15:57:36 by dokkim            #+#    #+#             */
-/*   Updated: 2022/03/07 19:43:03 by dokkim           ###   ########.fr       */
+/*   Updated: 2022/03/07 21:08:14 by dokkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ int	main(int argc, char **argv)
 	init_data(&data);
 	parsing(argv, &data);
 	validate_data(&data);
+	setting_textures(&(data.mlx), &(data.textures));
 	draw(&data);
 	return (0);
 }

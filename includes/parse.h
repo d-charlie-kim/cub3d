@@ -6,7 +6,7 @@
 /*   By: dokkim <dokkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/24 16:29:23 by dokkim            #+#    #+#             */
-/*   Updated: 2022/02/25 18:43:41 by dokkim           ###   ########.fr       */
+/*   Updated: 2022/03/07 21:09:11 by dokkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@
 # define C	6
 
 void	init_data(t_data *data);
+void	setting_textures(t_mlx *mlx, t_textures *textures);
 
 void	file_name_check(char *str, char *str2);
 

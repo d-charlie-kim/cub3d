@@ -6,7 +6,7 @@
 /*   By: dokkim <dokkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/24 17:19:07 by dokkim            #+#    #+#             */
-/*   Updated: 2022/03/07 20:20:54 by dokkim           ###   ########.fr       */
+/*   Updated: 2022/03/07 21:09:52 by dokkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,19 +24,19 @@ static void	setting_mlx(t_mlx *mlx)
 	mlx->image = NULL;
 }
 
-static void	setting_textures(t_mlx *mlx, t_textures *textures)
+void	setting_textures(t_mlx *mlx, t_textures *textures)
 {
 	textures->tex_image[NORTH] = mlx_xpm_file_to_image(mlx->mlx_ptr, \
-	"maps/NORTH.xpm", &(textures->tex_width[NORTH]), \
+	textures->wall_north, &(textures->tex_width[NORTH]), \
 	&(textures->tex_height[NORTH]));
 	textures->tex_image[SOUTH] = mlx_xpm_file_to_image(mlx->mlx_ptr, \
-	"maps/SOUTH.xpm", &(textures->tex_width[SOUTH]), \
+	textures->wall_south, &(textures->tex_width[SOUTH]), \
 	&(textures->tex_height[SOUTH]));
 	textures->tex_image[EAST] = mlx_xpm_file_to_image(mlx->mlx_ptr, \
-	"maps/EAST.xpm", &(textures->tex_width[EAST]), \
+	textures->wall_east, &(textures->tex_width[EAST]), \
 	&(textures->tex_height[EAST]));
 	textures->tex_image[WEST] = mlx_xpm_file_to_image(mlx->mlx_ptr, \
-	"maps/WEST.xpm", &(textures->tex_width[WEST]), \
+	textures->wall_west, &(textures->tex_width[WEST]), \
 	&(textures->tex_height[WEST]));
 	textures->tex[NORTH] = mlx_get_data_addr(textures->tex_image[NORTH], \
 	&(textures->bits_per_pixel[NORTH]), &(textures->line_size[NORTH]), \
@@ -60,7 +60,6 @@ void	init_data(t_data *data)
 	int	i;
 
 	setting_mlx(&(data->mlx));
-	setting_textures(&(data->mlx), &(data->textures));
 	i = 0;
 	while (i < 4)
 	{
