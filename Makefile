@@ -6,7 +6,7 @@
 #    By: dokkim <dokkim@student.42seoul.kr>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/24 15:59:26 by dokkim            #+#    #+#              #
-#    Updated: 2022/03/07 18:27:10 by dokkim           ###   ########.fr        #
+#    Updated: 2022/03/07 18:41:29 by dokkim           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,17 +49,17 @@ VALIDATE_SRCS	= $(addprefix ./srcs/validate/, \
 					)
 
 DRAW_SRCS		= $(addprefix ./srcs/draw/, \
- 					draw_utils.c \
+					draw_utils.c \
 					draw.c \
 					draw_line.c \
 					calculate.c \
 					image.c \
 					set_player.c \
- 					)
+					)
 
- EVENT_SRCS		= $(addprefix ./srcs/event/, \
- 					event.c \
- 					)
+EVENT_SRCS		= $(addprefix ./srcs/event/, \
+					event.c \
+					)
 
 ERROR_SRCS		= $(addprefix ./srcs/error/, \
 					ft_error.c \
