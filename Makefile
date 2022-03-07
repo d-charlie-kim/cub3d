@@ -6,15 +6,15 @@
 #    By: jaejeong <jaejeong@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/24 15:59:26 by dokkim            #+#    #+#              #
-#    Updated: 2022/03/07 15:21:02 by jaejeong         ###   ########.fr        #
+#    Updated: 2022/03/07 16:46:06 by jaejeong         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		= cub3d
-OS			= Linux
+NAME		= cub3D
+OS			= Mac
 
 CC			= gcc
-CFLAGS		= $(INCFLAGS) $(WFLAGS) $(MLXFLAGS) $(GFLAGS)
+CFLAGS		= $(INCFLAGS) $(WFLAGS) $(GFLAGS)
 WFLAGS		= -Wall -Wextra -Werror
 GFLAGS		= -g3 -fsanitize=address
 INCDIR		= includes
@@ -87,10 +87,10 @@ OBJS	= $(SRCS:.c=.o)
 all			: $(NAME)
 
 %.o		:	%.c
-		$(CC) $(CFLAGS) -c $< -o $@ -lm
+		$(CC) $(CFLAGS) -c $< -o $@
 
 $(NAME)		: $(MLX) $(OBJS)
-	$(CC) $(OBJS) $(CFLAGS) -o $@ -lm
+	$(CC) $(OBJS) $(CFLAGS)  $(MLXFLAGS) -o $@ -lm
 
 $(MLX)		:
 	make -C $(MLXDIR) all
