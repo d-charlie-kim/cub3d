@@ -6,7 +6,7 @@
 /*   By: jaejeong <jaejeong@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/24 17:19:07 by dokkim            #+#    #+#             */
-/*   Updated: 2022/03/07 15:29:54 by jaejeong         ###   ########.fr       */
+/*   Updated: 2022/03/07 15:55:17 by jaejeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,10 @@ static void	setting_mlx(t_mlx *mlx)
 	mlx->image = NULL;
 }
 
+
+		#include <stdio.h>
+
+
 static void	setting_textures(t_mlx *mlx, t_textures *textures)
 {
 
@@ -37,6 +41,7 @@ static void	setting_textures(t_mlx *mlx, t_textures *textures)
 	textures->tex[SOUTH] = mlx_get_data_addr(textures->tex_image[SOUTH], &(textures->bits_per_pixel[SOUTH]), &(textures->line_size[SOUTH]), &(textures->endian[SOUTH]));
 	textures->tex[EAST] = mlx_get_data_addr(textures->tex_image[EAST], &(textures->bits_per_pixel[EAST]), &(textures->line_size[EAST]), &(textures->endian[EAST]));
 	textures->tex[WEST] = mlx_get_data_addr(textures->tex_image[WEST], &(textures->bits_per_pixel[WEST]), &(textures->line_size[WEST]), &(textures->endian[WEST]));
+	printf("bits_per_pixel : %d\nline_size : %d\nendian : %d\n", textures->bits_per_pixel[WEST], textures->line_size[WEST], textures->endian[WEST]);
 }
 
 void	init_data(t_data *data)

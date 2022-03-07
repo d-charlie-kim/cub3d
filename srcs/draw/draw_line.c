@@ -6,13 +6,27 @@
 /*   By: jaejeong <jaejeong@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 14:37:32 by jaejeong          #+#    #+#             */
-/*   Updated: 2022/03/07 15:15:51 by jaejeong         ###   ########.fr       */
+/*   Updated: 2022/03/07 16:35:32 by jaejeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "struct.h"
 #include "draw.h"
 #include <math.h>
+
+
+
+
+
+
+
+													#include <stdio.h>
+
+
+
+
+
+
 
 static int	get_texture_index(t_ray *ray)
 {
@@ -42,25 +56,36 @@ static int	get_texture_x_coordinate(t_ray *ray, double wall_x, int tex_width)
 {
 	int tex_x;
 
+							(void)ray;
 	tex_x = (int)(wall_x * (double)tex_width);
-	if (ray->side == 0 && ray->dir_x > 0)
-		tex_x = tex_width - tex_x - 1;
-	if (ray->side == 1 && ray->dir_y < 0)
-		tex_x = tex_width - tex_x - 1;
+	//if (ray->side == 0 && ray->dir_x > 0)             나중에 수정합시다
+	//	tex_x = tex_width - tex_x - 1;
+	//if (ray->side == 1 && ray->dir_y < 0)
+	//	tex_x = tex_width - tex_x - 1;
 	return (tex_x);
 }
 
-static int	get_color(char *color_point)
+static int	get_color(char *color_point, int endian)
 {
 	int	color;
 
 	color = 0;
-	color += color_point[0];
-	color <<= 8;
-	color += color_point[1];
-	color <<= 8;
-	color += color_point[2];
-	color <<= 8;
+	if (endian == 1)
+	{
+		color += color_point[1];
+		color <<= 8;
+		color += color_point[2];
+		color <<= 8;
+		color += color_point[3];
+	}
+	else
+	{
+		color += color_point[2];
+		color <<= 8;
+		color += color_point[1];
+		color <<= 8;
+		color += color_point[0];
+	}
 	return (color);
 }
 
@@ -82,20 +107,21 @@ void	draw_line(t_data *data, t_ray *ray, int x, double perp_wall_dist)
 	line_height = (int)(HEIGHT / perp_wall_dist);
 	wall_x = get_wall_x_coordinate(data, ray, perp_wall_dist);
 	tex_x = get_texture_x_coordinate(ray, wall_x, data->textures.tex_width[tex_index]);
+	printf("%lf %d\n", wall_x, tex_x);
 	draw_start = -line_height / 2 + HEIGHT / 2;
 	draw_end = line_height / 2 + HEIGHT / 2;
-	step = 1.0 * (data->textures.tex_height[tex_index]) / line_height;
-	tex_pos = (draw_start - HEIGHT / 2 + line_height / 2) * step;
 	if (draw_start < 0)
 		draw_start = 0;
 	if (draw_end > HEIGHT)
 		draw_end = HEIGHT - 1;
+	step = 1.0 * (data->textures.tex_height[tex_index]) / line_height;
+	tex_pos = (draw_start - HEIGHT / 2 + line_height / 2) * step;
 	while (draw_start <= draw_end)
 	{
-		tex_y = (int)tex_pos & (data->textures.tex_height[tex_index]);
+		tex_y = (int)tex_pos;
 		tex_pos += step;
-		color_point = data->textures.tex[tex_index] + (data->textures.line_size[tex_index] * tex_y) + (data->textures.bits_per_pixel[tex_index] * tex_x);
-		color = get_color(color_point);
+		color_point = data->textures.tex[tex_index] + (data->textures.line_size[tex_index] * tex_y) + (data->textures.bits_per_pixel[tex_index] / 8 * tex_x);
+		color = get_color(color_point, data->textures.endian[tex_index]);
 		my_mlx_pixel_input(&(data->mlx), x, draw_start, color);
 		draw_start++;
 	}
