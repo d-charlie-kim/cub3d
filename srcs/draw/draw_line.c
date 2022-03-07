@@ -6,7 +6,7 @@
 /*   By: dokkim <dokkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 14:37:32 by jaejeong          #+#    #+#             */
-/*   Updated: 2022/03/07 19:04:06 by dokkim           ###   ########.fr       */
+/*   Updated: 2022/03/07 20:11:37 by dokkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ static int	get_texture_x_coordinate(t_ray *ray, double wall_x, int tex_width)
 	return (tex_x);
 }
 
-static int	get_color(char *color_point, int endian)
+static int	get_color(unsigned char *color_point, int endian)
 {
 	int	color;
 
@@ -85,7 +85,7 @@ void	draw_line(t_data *data, t_ray *ray, int x, double perp_wall_dist)
 	int		tex_x;
 	int		tex_y;
 	int		color;
-	char	*color_point;
+	unsigned char	*color_point;
 	double	wall_x;
 	double	step;
 	double	tex_pos;
@@ -106,7 +106,7 @@ void	draw_line(t_data *data, t_ray *ray, int x, double perp_wall_dist)
 	{
 		tex_y = (int)tex_pos;
 		tex_pos += step;
-		color_point = data->textures.tex[tex_index] + (data->textures.line_size[tex_index] * tex_y) + (data->textures.bits_per_pixel[tex_index] / 8 * tex_x);
+		color_point = (unsigned char *)(data->textures.tex[tex_index] + (data->textures.line_size[tex_index] * tex_y) + (data->textures.bits_per_pixel[tex_index] / 8 * tex_x));
 		color = get_color(color_point, data->textures.endian[tex_index]);
 		my_mlx_pixel_input(&(data->mlx), x, draw_start, color);
 		draw_start++;

@@ -6,7 +6,7 @@
 #    By: dokkim <dokkim@student.42seoul.kr>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/24 15:59:26 by dokkim            #+#    #+#              #
-#    Updated: 2022/03/07 19:40:34 by dokkim           ###   ########.fr        #
+#    Updated: 2022/03/07 20:21:59 by dokkim           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME		= cub3D
 OS			= Mac
 
 CC			= gcc
-CFLAGS		= $(INCFLAGS) $(WFLAGS) #$(GFLAGS)
+CFLAGS		= $(INCFLAGS) $(WFLAGS) $(GFLAGS)
 WFLAGS		= -Wall -Wextra -Werror
 GFLAGS		= -g3 -fsanitize=address
 INCDIR		= includes
