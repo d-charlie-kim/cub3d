@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: jaejeong <jaejeong@student.42.fr>          +#+  +:+       +#+         #
+#    By: dokkim <dokkim@student.42seoul.kr>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/24 15:59:26 by dokkim            #+#    #+#              #
-#    Updated: 2022/03/07 16:54:32 by jaejeong         ###   ########.fr        #
+#    Updated: 2022/03/07 18:27:10 by dokkim           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME		= cub3D
 OS			= Mac
 
 CC			= gcc
-CFLAGS		= $(INCFLAGS) $(WFLAGS) $(GFLAGS)
+CFLAGS		= $(INCFLAGS) $(WFLAGS) #$(GFLAGS)
 WFLAGS		= -Wall -Wextra -Werror
 GFLAGS		= -g3 -fsanitize=address
 INCDIR		= includes
@@ -26,10 +26,10 @@ else
 	MLXFLAGS = -L$(MLXDIR) -lmlx -framework OpenGL -framework AppKit
 endif
 
-MLXDIR		= minilibx_opengl_20191021
+MLXDIR		= minilibx_mms_20210621
 
 ifeq ($(OS), Mac)
-	MLX		= $(MLXDIR)/libmlx.a
+	MLX		= $(MLXDIR)/libmlx.dylib
 endif
 
 GNL_SRCS		= $(addprefix ./srcs/get_next_line/, \
@@ -60,9 +60,6 @@ DRAW_SRCS		= $(addprefix ./srcs/draw/, \
  EVENT_SRCS		= $(addprefix ./srcs/event/, \
  					event.c \
  					)
-
-# MOVE_SRCS		= $(addprefix ./srcs/move/, \
-# 					)
 
 ERROR_SRCS		= $(addprefix ./srcs/error/, \
 					ft_error.c \
