@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   put_data.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jaejeong <jaejeong@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dokkim <dokkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/24 20:37:02 by dokkim            #+#    #+#             */
-/*   Updated: 2022/03/05 12:46:56 by jaejeong         ###   ########.fr       */
+/*   Updated: 2022/03/07 19:41:32 by dokkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,30 @@
 #include "struct.h"
 #include "error.h"
 #include "parse.h"
+
+static int	checking(char *line, int *i, int *size, int *count)
+{
+	*size = 0;
+	while (line[*i] == ' ')
+		(*i)++;
+	while (line[*i] >= '0' && line[*i] <= '9')
+	{
+		(*size)++;
+		(*i)++;
+	}
+	while (line[*i] == ' ')
+		(*i)++;
+	if (line[*i] == ',')
+	{
+		(*i)++;
+		(*count)++;
+		if ((*size) == 0 || (*size) > 3)
+			return (1);
+	}
+	else if (line[*i])
+		return (1);
+	return (0);
+}
 
 static int	value_valid_check(char *line)
 {
@@ -28,24 +52,7 @@ static int	value_valid_check(char *line)
 	count = 0;
 	while (line[i])
 	{
-		size = 0;
-		while (line[i] == ' ')
-			i++;
-		while (line[i] >= '0' && line[i] <= '9')
-		{
-			size++;
-			i++;
-		}
-		while (line[i] == ' ')
-			i++;
-		if (line[i] == ',')
-		{
-			i++;
-			count++;
-			if (size == 0 || size > 3)
-				return (1);
-		}
-		else if (line[i])
+		if (checking (line, &i, &size, &count))
 			return (1);
 	}
 	if (count != 2 || size == 0 || size > 3)
@@ -62,8 +69,6 @@ static void	get_color_value(int *texture, char *line)
 
 	i = 0;
 	index = 0;
-	if (value_valid_check(line))
-		print_err_and_exit("Error\n : .cub FILE IS NOT VALID\n");
 	while (line[i] && index < 3)
 	{
 		size = 0;
@@ -96,10 +101,15 @@ void	put_data(t_data *data, int id, char *line)
 		data->textures.wall_west = ft_strdup(line);
 	else if (id == EA)
 		data->textures.wall_east = ft_strdup(line);
-	else if (id == F)
-		get_color_value(data->textures.floor, line);
 	else
-		get_color_value(data->textures.ceilling, line);
+	{
+		if (value_valid_check(line))
+			print_err_and_exit("Error\n : .cub FILE IS NOT VALID\n");
+		if (id == F)
+			get_color_value(data->textures.floor, line);
+		else if (id == C)
+			get_color_value(data->textures.ceilling, line);
+	}
 }
 
 void	put_map(t_data *data, char *line)

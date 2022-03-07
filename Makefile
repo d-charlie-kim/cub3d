@@ -6,7 +6,7 @@
 #    By: dokkim <dokkim@student.42seoul.kr>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/24 15:59:26 by dokkim            #+#    #+#              #
-#    Updated: 2022/03/07 18:41:29 by dokkim           ###   ########.fr        #
+#    Updated: 2022/03/07 19:40:34 by dokkim           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,6 +46,7 @@ PARSE_SRCS		= $(addprefix ./srcs/parse/, \
 
 VALIDATE_SRCS	= $(addprefix ./srcs/validate/, \
 					validate_data.c \
+					validate_check.c \
 					)
 
 DRAW_SRCS		= $(addprefix ./srcs/draw/, \

@@ -6,7 +6,7 @@
 /*   By: dokkim <dokkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 14:37:32 by jaejeong          #+#    #+#             */
-/*   Updated: 2022/03/07 18:48:16 by dokkim           ###   ########.fr       */
+/*   Updated: 2022/03/07 19:04:06 by dokkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,8 @@ static int	get_texture_index(t_ray *ray)
 		return (NORTH);
 }
 
-static double	get_wall_x_coordinate(t_data *data, t_ray *ray, double perp_wall_dist)
+static double	get_wall_x_coordinate(t_data *data, t_ray *ray, \
+												double perp_wall_dist)
 {
 	double	wall_x;
 

@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   key_code.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jaejeong <jaejeong@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dokkim <dokkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/06 13:13:48 by jaejeong          #+#    #+#             */
-/*   Updated: 2022/03/07 16:54:26 by jaejeong         ###   ########.fr       */
+/*   Updated: 2022/03/07 18:53:52 by dokkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef KEYCODE_H
-# define KEYCODE_H
+#ifndef KEY_CODE_H
+# define KEY_CODE_H
 
 # define OS 2 // 1 : window, 2 : mac
 

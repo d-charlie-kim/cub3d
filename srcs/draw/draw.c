@@ -6,7 +6,7 @@
 /*   By: dokkim <dokkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/03 13:27:17 by jaejeong          #+#    #+#             */
-/*   Updated: 2022/03/07 18:47:46 by dokkim           ###   ########.fr       */
+/*   Updated: 2022/03/07 18:59:49 by dokkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,6 @@ void	put_color_floor_and_ceilling(t_data *data)
 void	draw(t_data *data)
 {
 	set_player_position(data);
-	show_image(data);     // jaejeong
-	get_event(data);            // 나중에 같이
+	show_image(data);
+	get_event(data);
 }

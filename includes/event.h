@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   event.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jaejeong <jaejeong@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dokkim <dokkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/03 13:47:53 by jaejeong          #+#    #+#             */
-/*   Updated: 2022/03/06 13:11:50 by jaejeong         ###   ########.fr       */
+/*   Updated: 2022/03/07 18:53:09 by dokkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef EVENT_H
 # define EVENT_H
 
-#include "struct.h"
+# include "struct.h"
 
 void	get_event(t_data *data);
 

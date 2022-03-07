@@ -6,7 +6,7 @@
 /*   By: dokkim <dokkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/04 16:35:02 by jaejeong          #+#    #+#             */
-/*   Updated: 2022/03/07 18:47:51 by dokkim           ###   ########.fr       */
+/*   Updated: 2022/03/07 18:59:26 by dokkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,9 +49,11 @@ static void	check_hit_point(t_data *data, t_ray *ray)
 static double	get_vertical_distance_to_wall(t_data *data, t_ray *ray)
 {
 	if (ray->side == 0)
-		return ((ray->map_x - data->player.pos_x + (1 - ray->step_x) / 2) / ray->dir_x);
+		return ((ray->map_x - data->player.pos_x + \
+			(1 - ray->step_x) / 2) / ray->dir_x);
 	else
-		return ((ray->map_y - data->player.pos_y + (1 - ray->step_y) / 2) / ray->dir_y);
+		return ((ray->map_y - data->player.pos_y + \
+			(1 - ray->step_y) / 2) / ray->dir_y);
 }
 
 void	show_image(t_data *data)
@@ -73,5 +75,6 @@ void	show_image(t_data *data)
 		draw_line(data, &ray, x, perp_wall_dist);
 		x++;
 	}
-	mlx_put_image_to_window(data->mlx.mlx_ptr, data->mlx.window, data->mlx.image, 0, 0);
+	mlx_put_image_to_window(data->mlx.mlx_ptr, \
+		data->mlx.window, data->mlx.image, 0, 0);
 }

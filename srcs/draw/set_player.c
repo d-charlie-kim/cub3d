@@ -3,13 +3,12 @@
 /*                                                        :::      ::::::::   */
 /*   set_player.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jaejeong <jaejeong@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dokkim <dokkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/04 17:38:03 by jaejeong          #+#    #+#             */
-/*   Updated: 2022/03/07 16:04:55 by jaejeong         ###   ########.fr       */
+/*   Updated: 2022/03/07 18:59:06 by dokkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include "draw.h"
 #include "struct.h"
