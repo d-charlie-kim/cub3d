@@ -6,7 +6,7 @@
 /*   By: jaejeong <jaejeong@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/04 16:35:02 by jaejeong          #+#    #+#             */
-/*   Updated: 2022/03/06 13:22:25 by jaejeong         ###   ########.fr       */
+/*   Updated: 2022/03/06 21:41:20 by jaejeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ void	show_image(t_data *data)
 		set_ray(data, &ray, camera_x);
 		check_hit_point(data, &ray);
 		perp_wall_dist = get_vertical_distance_to_wall(data, &ray);
-		draw_line(&(data->mlx), &ray, x, perp_wall_dist);
+		draw_line(data, &ray, x, perp_wall_dist);
 		x++;
 	}
 	mlx_put_image_to_window(data->mlx.mlx_ptr, data->mlx.window, data->mlx.image, 0, 0);

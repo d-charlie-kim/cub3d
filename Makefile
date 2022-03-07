@@ -6,7 +6,7 @@
 #    By: jaejeong <jaejeong@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/24 15:59:26 by dokkim            #+#    #+#              #
-#    Updated: 2022/03/06 14:19:02 by jaejeong         ###   ########.fr        #
+#    Updated: 2022/03/07 15:21:02 by jaejeong         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ OS			= Linux
 CC			= gcc
 CFLAGS		= $(INCFLAGS) $(WFLAGS) $(MLXFLAGS) $(GFLAGS)
 WFLAGS		= -Wall -Wextra -Werror
-GFLAGS		= -g -fsanitize=address
+GFLAGS		= -g3 -fsanitize=address
 INCDIR		= includes
 INCFLAGS	= -I$(INCDIR)
 
@@ -51,6 +51,7 @@ VALIDATE_SRCS	= $(addprefix ./srcs/validate/, \
 DRAW_SRCS		= $(addprefix ./srcs/draw/, \
  					draw_utils.c \
 					draw.c \
+					draw_line.c \
 					calculate.c \
 					image.c \
 					set_player.c \
