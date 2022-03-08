@@ -6,7 +6,7 @@
 #    By: dokkim <dokkim@student.42seoul.kr>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/24 15:59:26 by dokkim            #+#    #+#              #
-#    Updated: 2022/03/07 21:43:52 by dokkim           ###   ########.fr        #
+#    Updated: 2022/03/08 19:24:25 by dokkim           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -94,9 +94,11 @@ $(MLX)		:
 	make -C $(MLXDIR) all
 
 clean		:
+	make -C $(MLXDIR) clean
 	$(RM) $(OBJS)
 
 fclean		: clean
+	make -C $(MLXDIR) clean
 	$(RM) $(NAME)
 
 re			: fclean all
