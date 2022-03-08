@@ -20,6 +20,7 @@
 		"vector": "c",
 		"unistd.h": "c",
 		"mlx.h": "c",
-		"draw.h": "c"
+		"draw.h": "c",
+		"validate.h": "c"
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: dokkim <dokkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/24 17:20:01 by dokkim            #+#    #+#             */
-/*   Updated: 2022/03/07 21:07:31 by dokkim           ###   ########.fr       */
+/*   Updated: 2022/03/08 19:52:41 by dokkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 
 # include "struct.h"
 
-# define WIDTH 900
-# define HEIGHT 600
+# define WIDTH 1200
+# define HEIGHT 900
 
 typedef struct s_ray
 {

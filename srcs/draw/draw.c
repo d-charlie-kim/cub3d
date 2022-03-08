@@ -6,7 +6,7 @@
 /*   By: dokkim <dokkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/03 13:27:17 by jaejeong          #+#    #+#             */
-/*   Updated: 2022/03/07 18:59:49 by dokkim           ###   ########.fr       */
+/*   Updated: 2022/03/08 19:51:46 by dokkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,6 @@
 #include "draw.h"
 #include "struct.h"
 #include "event.h"
-
-#define TEXWIDTH 960
-#define TEXHEIGHT 1280
 
 void	put_color_floor_and_ceilling(t_data *data)
 {
