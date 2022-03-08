@@ -6,7 +6,7 @@
 #    By: dokkim <dokkim@student.42seoul.kr>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/24 15:59:26 by dokkim            #+#    #+#              #
-#    Updated: 2022/03/08 19:24:25 by dokkim           ###   ########.fr        #
+#    Updated: 2022/03/08 19:37:20 by dokkim           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -92,6 +92,7 @@ $(NAME)		: $(MLX) $(OBJS)
 
 $(MLX)		:
 	make -C $(MLXDIR) all
+	cp $(MLXDIR)/libmlx.dylib ./
 
 clean		:
 	make -C $(MLXDIR) clean
@@ -99,7 +100,7 @@ clean		:
 
 fclean		: clean
 	make -C $(MLXDIR) clean
-	$(RM) $(NAME)
+	$(RM) $(NAME) libmlx.dylib
 
 re			: fclean all
 
