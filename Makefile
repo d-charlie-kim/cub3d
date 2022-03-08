@@ -6,7 +6,7 @@
 #    By: dokkim <dokkim@student.42seoul.kr>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/24 15:59:26 by dokkim            #+#    #+#              #
-#    Updated: 2022/03/08 19:37:20 by dokkim           ###   ########.fr        #
+#    Updated: 2022/03/08 19:46:28 by dokkim           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -88,7 +88,7 @@ all			: $(NAME)
 		$(CC) $(CFLAGS) -c $< -o $@
 
 $(NAME)		: $(MLX) $(OBJS)
-	$(CC) $(OBJS) $(CFLAGS)  $(MLXFLAGS) -o $@ -lm
+	$(CC) $(OBJS) $(CFLAGS) $(MLXFLAGS) -o $@ -lm
 
 $(MLX)		:
 	make -C $(MLXDIR) all
