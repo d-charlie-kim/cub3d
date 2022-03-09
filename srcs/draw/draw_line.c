@@ -6,7 +6,7 @@
 /*   By: jaejeong <jaejeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 14:37:32 by jaejeong          #+#    #+#             */
-/*   Updated: 2022/03/09 15:57:12 by jaejeong         ###   ########.fr       */
+/*   Updated: 2022/03/09 16:00:05 by jaejeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,12 +43,11 @@ static int	get_texture_x_coordinate(t_ray *ray, double wall_x, int tex_width)
 {
 	int tex_x;
 
-							(void)ray;
 	tex_x = (int)(wall_x * (double)tex_width);
-	//if (ray->side == 0 && ray->dir_x > 0)             나중에 수정합시다
-	//	tex_x = tex_width - tex_x - 1;
-	//if (ray->side == 1 && ray->dir_y < 0)
-	//	tex_x = tex_width - tex_x - 1;
+	if (ray->side == 0 && ray->dir_x < 0)
+		tex_x = tex_width - tex_x - 1;
+	if (ray->side == 1 && ray->dir_y > 0)
+		tex_x = tex_width - tex_x - 1;
 	return (tex_x);
 }
 
