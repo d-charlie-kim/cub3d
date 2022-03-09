@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   draw_line.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dokkim <dokkim@student.42seoul.kr>         +#+  +:+       +#+        */
+/*   By: jaejeong <jaejeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 14:37:32 by jaejeong          #+#    #+#             */
-/*   Updated: 2022/03/07 21:41:30 by dokkim           ###   ########.fr       */
+/*   Updated: 2022/03/09 15:57:12 by jaejeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,7 +98,7 @@ void	draw_line(t_data *data, t_ray *ray, int x, double perp_wall_dist)
 	draw_end = line_height / 2 + HEIGHT / 2;
 	if (draw_start < 0)
 		draw_start = 0;
-	if (draw_end > HEIGHT)
+	if (draw_end >= HEIGHT)
 		draw_end = HEIGHT - 1;
 	step = 1.0 * (data->textures.tex_height[tex_index]) / line_height;
 	tex_pos = (draw_start - HEIGHT / 2 + line_height / 2) * step;
