@@ -6,7 +6,7 @@
 /*   By: dokkim <dokkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/24 17:19:07 by dokkim            #+#    #+#             */
-/*   Updated: 2022/03/07 21:41:35 by dokkim           ###   ########.fr       */
+/*   Updated: 2022/03/09 15:12:47 by dokkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 #include "struct.h"
 #include "draw.h"
 
-static void	setting_mlx(t_mlx *mlx)
+void	setting_mlx(t_mlx *mlx)
 {
 	mlx->mlx_ptr = mlx_init();
 	mlx->window = mlx_new_window(mlx->mlx_ptr, WIDTH, HEIGHT, "cub3d");
@@ -59,12 +59,11 @@ void	init_data(t_data *data)
 {
 	int	i;
 
-	setting_mlx(&(data->mlx));
 	i = 0;
 	while (i < 4)
 	{
-		data->textures.floor[i] = 0;
-		data->textures.ceilling[i] = 0;
+		data->textures.floor[i] = -1;
+		data->textures.ceilling[i] = -1;
 		i++;
 	}
 	data->map_data = NULL;
