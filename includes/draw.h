@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   draw.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dokkim <dokkim@student.42seoul.kr>         +#+  +:+       +#+        */
+/*   By: jaejeong <jaejeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/24 17:20:01 by dokkim            #+#    #+#             */
-/*   Updated: 2022/03/08 19:52:41 by dokkim           ###   ########.fr       */
+/*   Updated: 2022/03/09 18:20:50 by jaejeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,15 @@ typedef struct s_ray
 	double	delta_dist_x;
 	double	delta_dist_y;
 }	t_ray;
+
+typedef struct s_tex
+{
+	int		index;
+	int		x;
+	int		y;
+	double	pos;
+	double	step;
+}	t_tex;
 
 void	set_player_position(t_data *data);
 
