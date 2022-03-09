@@ -1,66 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   calculate.c                                        :+:      :+:    :+:   */
+/*   move.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dokkim <dokkim@student.42seoul.kr>         +#+  +:+       +#+        */
+/*   By: jaejeong <jaejeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/04 16:35:06 by jaejeong          #+#    #+#             */
-/*   Updated: 2022/03/08 21:39:10 by dokkim           ###   ########.fr       */
+/*   Created: 2022/03/09 16:53:52 by jaejeong          #+#    #+#             */
+/*   Updated: 2022/03/09 16:55:12 by jaejeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <math.h>
 #include "struct.h"
-#include "draw.h"
 #include "key_code.h"
-
-void	get_delta_distance(t_ray *ray)
-{
-	if (ray->dir_y == 0)
-		ray->delta_dist_x = 0;
-	else if (ray->dir_x == 0)
-		ray->delta_dist_x = 1;
-	else
-		ray->delta_dist_x = fabs(1 / ray->dir_x);
-	if (ray->dir_x == 0)
-		ray->delta_dist_y = 0;
-	else if (ray->dir_y == 0)
-		ray->delta_dist_y = 1;
-	else
-		ray->delta_dist_y = fabs(1 / ray->dir_y);
-}
-
-void	get_side_distance(t_data *data, t_ray *ray)
-{
-	if (ray->dir_x < 0)
-	{
-		ray->step_x = -1;
-		ray->side_dist_x = \
-			(data->player.pos_x - ray->map_x) * ray->delta_dist_x;
-	}
-	else
-	{
-		ray->step_x = 1;
-		ray->side_dist_x = \
-			(ray->map_x + 1.0 - data->player.pos_x) * ray->delta_dist_x;
-	}
-	if (ray->dir_y < 0)
-	{
-		ray->step_y = -1;
-		ray->side_dist_y = \
-			(data->player.pos_y - ray->map_y) * ray->delta_dist_y;
-	}
-	else
-	{
-		ray->step_y = 1;
-		ray->side_dist_y = \
-			(ray->map_y + 1.0 - data->player.pos_y) * ray->delta_dist_y;
-	}
-}
+#include "draw.h"
+#include <math.h>
 
 void	player_movement(t_data *data, int key_code)
 {
+	double	old_pos_x;
+	double	old_pos_y;
+
+	old_pos_x = data->player.pos_x;
+	old_pos_y = data->player.pos_y;
 	if (key_code == W)
 	{
 		data->player.pos_x += data->player.dir_x / 10;
@@ -81,6 +42,10 @@ void	player_movement(t_data *data, int key_code)
 		data->player.pos_x -= data->player.dir_y / 10;
 		data->player.pos_y += data->player.dir_x / 10;
 	}
+	if (data->map_data[(int)(data->player.pos_y)][(int)old_pos_x] == '1')
+		data->player.pos_y = old_pos_y;
+	if (data->map_data[(int)(old_pos_y)][(int)data->player.pos_x] == '1')
+		data->player.pos_x = old_pos_x;
 	show_image(data);
 }
 
