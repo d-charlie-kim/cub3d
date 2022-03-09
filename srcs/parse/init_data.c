@@ -6,7 +6,7 @@
 /*   By: dokkim <dokkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/24 17:19:07 by dokkim            #+#    #+#             */
-/*   Updated: 2022/03/09 15:12:47 by dokkim           ###   ########.fr       */
+/*   Updated: 2022/03/09 17:41:34 by dokkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,9 +51,6 @@ void	setting_textures(t_mlx *mlx, t_textures *textures)
 	&(textures->bits_per_pixel[WEST]), &(textures->line_size[WEST]), \
 	&(textures->endian[WEST]));
 }
-/*
-	나중에 destroy 해줘야함!!!!!!!!!
-*/
 
 void	init_data(t_data *data)
 {
