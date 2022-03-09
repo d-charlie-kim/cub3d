@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: jaejeong <jaejeong@student.42seoul.kr>     +#+  +:+       +#+         #
+#    By: dokkim <dokkim@student.42seoul.kr>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/24 15:59:26 by dokkim            #+#    #+#              #
-#    Updated: 2022/03/09 16:56:28 by jaejeong         ###   ########.fr        #
+#    Updated: 2022/03/09 17:54:00 by dokkim           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -71,6 +71,10 @@ UTILS_SRCS		= $(addprefix ./srcs/utils/, \
 					libft.c \
 					)
 
+CLEAR_SRCS		= $(addprefix ./srcs/clear/, \
+					clear.c \
+					)
+
 
 SRCS		= ./srcs/main.c \
 				$(GNL_SRCS) \
@@ -80,6 +84,7 @@ SRCS		= ./srcs/main.c \
 				$(VALIDATE_SRCS) \
 				$(DRAW_SRCS) \
 				$(EVENT_SRCS) \
+				$(CLEAR_SRCS) \
 
 OBJS	= $(SRCS:.c=.o)
 
