@@ -6,7 +6,7 @@
 /*   By: dokkim <dokkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/04 17:38:03 by jaejeong          #+#    #+#             */
-/*   Updated: 2022/03/07 18:59:06 by dokkim           ###   ########.fr       */
+/*   Updated: 2022/03/09 18:46:25 by dokkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,6 +89,6 @@ void	set_player_position(t_data *data)
 	find_player(&(data->map_data), &dir, &x, &y);
 	set_player_dir(&(data->player), dir);
 	set_player_plane(&(data->player));
-	data->player.pos_x = (double)x + 0.5;
-	data->player.pos_y = (double)y + 0.5;
+	data->player.pos_x = (double)x + 0.5001;
+	data->player.pos_y = (double)y + 0.5001;
 }
