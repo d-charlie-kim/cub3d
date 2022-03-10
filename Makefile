@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: dokkim <dokkim@student.42seoul.kr>         +#+  +:+       +#+         #
+#    By: jaejeong <jaejeong@student.42seoul.kr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/24 15:59:26 by dokkim            #+#    #+#              #
-#    Updated: 2022/03/09 18:35:32 by dokkim           ###   ########.fr        #
+#    Updated: 2022/03/10 12:59:44 by jaejeong         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME		= cub3D
 OS			= Mac
 
 CC			= gcc
-CFLAGS		= $(INCFLAGS) $(WFLAGS) $(GFLAGS)
+CFLAGS		= $(INCFLAGS) $(WFLAGS) #$(GFLAGS)
 WFLAGS		= -Wall -Wextra -Werror
 GFLAGS		= -g3 -fsanitize=address
 INCDIR		= includes
