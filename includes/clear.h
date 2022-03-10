@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   clear.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dokkim <dokkim@student.42seoul.kr>         +#+  +:+       +#+        */
+/*   By: jaejeong <jaejeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 17:50:06 by dokkim            #+#    #+#             */
-/*   Updated: 2022/03/09 17:52:40 by dokkim           ###   ########.fr       */
+/*   Updated: 2022/03/10 15:13:54 by jaejeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CLEAR_H
 # define CLEAR_H
 
-# include "struct.h"
+# include "structure.h"
 
 void	clear_all(t_data *data);
 

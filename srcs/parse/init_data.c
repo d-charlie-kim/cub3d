@@ -6,14 +6,14 @@
 /*   By: jaejeong <jaejeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/24 17:19:07 by dokkim            #+#    #+#             */
-/*   Updated: 2022/03/10 14:53:58 by jaejeong         ###   ########.fr       */
+/*   Updated: 2022/03/10 15:16:12 by jaejeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <errno.h>
 #include <stdlib.h>
 #include <mlx.h>
-#include "struct.h"
+#include "structure.h"
 #include "draw.h"
 
 void	setting_mlx(t_mlx *mlx)

@@ -6,14 +6,14 @@
 /*   By: jaejeong <jaejeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/24 17:20:01 by dokkim            #+#    #+#             */
-/*   Updated: 2022/03/09 18:20:50 by jaejeong         ###   ########.fr       */
+/*   Updated: 2022/03/10 15:14:14 by jaejeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef DRAW_H
 # define DRAW_H
 
-# include "struct.h"
+# include "structure.h"
 
 # define WIDTH 1200
 # define HEIGHT 900

@@ -6,12 +6,12 @@
 /*   By: jaejeong <jaejeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/03 13:16:55 by jaejeong          #+#    #+#             */
-/*   Updated: 2022/03/09 15:56:04 by jaejeong         ###   ########.fr       */
+/*   Updated: 2022/03/10 15:16:08 by jaejeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <mlx.h>
-#include "struct.h"
+#include "structure.h"
 #include "draw.h"
 
 void	create_new_image(t_mlx *mlx)

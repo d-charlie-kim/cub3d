@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   draw.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dokkim <dokkim@student.42seoul.kr>         +#+  +:+       +#+        */
+/*   By: jaejeong <jaejeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/03 13:27:17 by jaejeong          #+#    #+#             */
-/*   Updated: 2022/03/08 19:51:46 by dokkim           ###   ########.fr       */
+/*   Updated: 2022/03/10 15:15:24 by jaejeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <math.h>
 #include "draw.h"
-#include "struct.h"
+#include "structure.h"
 #include "event.h"
 
 void	put_color_floor_and_ceilling(t_data *data)

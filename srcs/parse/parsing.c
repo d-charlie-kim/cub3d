@@ -6,14 +6,14 @@
 /*   By: jaejeong <jaejeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/24 15:57:40 by dokkim            #+#    #+#             */
-/*   Updated: 2022/03/10 15:03:26 by jaejeong         ###   ########.fr       */
+/*   Updated: 2022/03/10 15:16:23 by jaejeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <fcntl.h>
 #include "get_next_line.h"
 #include "error.h"
-#include "struct.h"
+#include "structure.h"
 #include "libft.h"
 #include "parse.h"
 

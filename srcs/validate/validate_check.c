@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   validate_check.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dokkim <dokkim@student.42seoul.kr>         +#+  +:+       +#+        */
+/*   By: jaejeong <jaejeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 19:15:33 by dokkim            #+#    #+#             */
-/*   Updated: 2022/03/08 20:18:03 by dokkim           ###   ########.fr       */
+/*   Updated: 2022/03/10 15:16:25 by jaejeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <fcntl.h>
 #include <unistd.h>
-#include "struct.h"
+#include "structure.h"
 #include "error.h"
 #include "libft.h"
 

@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   set_player.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dokkim <dokkim@student.42seoul.kr>         +#+  +:+       +#+        */
+/*   By: jaejeong <jaejeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/04 17:38:03 by jaejeong          #+#    #+#             */
-/*   Updated: 2022/03/09 18:46:25 by dokkim           ###   ########.fr       */
+/*   Updated: 2022/03/10 15:15:43 by jaejeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "draw.h"
-#include "struct.h"
+#include "structure.h"
 #include "event.h"
 
 static void	find_player(char ***map_data, char *dir, int *x, int *y)

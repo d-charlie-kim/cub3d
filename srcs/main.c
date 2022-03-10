@@ -6,11 +6,11 @@
 /*   By: jaejeong <jaejeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/24 15:57:36 by dokkim            #+#    #+#             */
-/*   Updated: 2022/03/10 12:38:32 by jaejeong         ###   ########.fr       */
+/*   Updated: 2022/03/10 15:15:58 by jaejeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "struct.h"
+#include "structure.h"
 #include "validate.h"
 #include "parse.h"
 #include "error.h"

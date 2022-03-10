@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   validate.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dokkim <dokkim@student.42seoul.kr>         +#+  +:+       +#+        */
+/*   By: jaejeong <jaejeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/24 16:29:23 by dokkim            #+#    #+#             */
-/*   Updated: 2022/03/07 19:17:53 by dokkim           ###   ########.fr       */
+/*   Updated: 2022/03/10 15:15:51 by jaejeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef VALIDATE_H
 # define VALIDATE_H
 
-# include "struct.h"
+# include "structure.h"
 
 void	validate_data(t_data *data);
 

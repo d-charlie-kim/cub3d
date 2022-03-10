@@ -6,14 +6,14 @@
 /*   By: jaejeong <jaejeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/24 20:37:02 by dokkim            #+#    #+#             */
-/*   Updated: 2022/03/10 14:46:16 by jaejeong         ###   ########.fr       */
+/*   Updated: 2022/03/10 15:16:14 by jaejeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <stdlib.h>
 #include "libft.h"
-#include "struct.h"
+#include "structure.h"
 #include "error.h"
 #include "parse.h"
 

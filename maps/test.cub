@@ -3,11 +3,11 @@ NO ./maps/NORTH.xpm
 
 SO ./maps/SOUTH.xpm
 
-
-F 123,123,0
 WE ./maps/WEST.xpm
+
 EA ./maps/EAST.xpm
 
+F 123,123,0
 
 C 224,130,123
 

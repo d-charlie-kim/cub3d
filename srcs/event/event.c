@@ -6,14 +6,14 @@
 /*   By: jaejeong <jaejeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/03 13:44:25 by jaejeong          #+#    #+#             */
-/*   Updated: 2022/03/10 12:39:12 by jaejeong         ###   ########.fr       */
+/*   Updated: 2022/03/10 15:16:18 by jaejeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <stdlib.h>
 #include <mlx.h>
-#include "struct.h"
+#include "structure.h"
 #include "key_code.h"
 #include "draw.h"
 #include "clear.h"

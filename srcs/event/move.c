@@ -6,11 +6,11 @@
 /*   By: jaejeong <jaejeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 16:53:52 by jaejeong          #+#    #+#             */
-/*   Updated: 2022/03/09 17:45:45 by jaejeong         ###   ########.fr       */
+/*   Updated: 2022/03/10 15:15:47 by jaejeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "struct.h"
+#include "structure.h"
 #include "key_code.h"
 #include "draw.h"
 #include <math.h>
