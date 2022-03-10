@@ -6,7 +6,7 @@
 /*   By: jaejeong <jaejeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/03 13:44:25 by jaejeong          #+#    #+#             */
-/*   Updated: 2022/03/10 15:21:42 by jaejeong         ###   ########.fr       */
+/*   Updated: 2022/03/10 17:31:52 by jaejeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ static int	key_hook(int key_code, t_data *data)
 	{
 		printf("END\n");
 		clear_all(data);
-		exit (0);
+		exit(0);
 	}
 	if (key_code == W || key_code == A || key_code == S || key_code == D)
 		player_movement(data, key_code);
@@ -33,18 +33,17 @@ static int	key_hook(int key_code, t_data *data)
 	return (0);
 }
 
-static int	x_icon(int key_code, t_data *data)
+static int	x_icon(int key_code)
 {
 	(void)key_code;
 	printf("END\n");
-	clear_all(data);
-	exit (0);
+	exit(0);
 	return (0);
 }
 
 void	get_event(t_data *data)
 {
-	mlx_hook(data->mlx.window, 17, 0, x_icon, data);
 	mlx_hook(data->mlx.window, 2, 1L >> 0, key_hook, data);
+	mlx_hook(data->mlx.window, 17, 0, x_icon, NULL);
 	mlx_loop(data->mlx.mlx_ptr);
 }

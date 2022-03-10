@@ -6,7 +6,7 @@
 /*   By: jaejeong <jaejeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 14:37:32 by jaejeong          #+#    #+#             */
-/*   Updated: 2022/03/10 15:15:21 by jaejeong         ###   ########.fr       */
+/*   Updated: 2022/03/10 17:39:33 by jaejeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,12 +47,20 @@ static int	get_texture_x_coordinate(t_data *data, t_ray *ray,
 	return (tex_x);
 }
 
+static int	set_tex_y(t_data *data, t_tex tex)
+{
+	if (tex.y >= data->textures.tex_height[tex.index])
+		return (tex.y - 1);
+	return (tex.y);
+}
+
 static int	get_color(t_data *data, t_tex tex, int endian)
 {
 	int				color;
 	unsigned char	*color_point;
 
 	color = 0;
+	tex.y = set_tex_y(data, tex);
 	color_point = (unsigned char *)(data->textures.tex[tex.index]
 			+ (data->textures.line_size[tex.index] * tex.y)
 			+ (data->textures.bits_per_pixel[tex.index] / 8 * tex.x));
