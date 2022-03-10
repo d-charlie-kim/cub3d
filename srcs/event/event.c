@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   event.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dokkim <dokkim@student.42seoul.kr>         +#+  +:+       +#+        */
+/*   By: jaejeong <jaejeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/03 13:44:25 by jaejeong          #+#    #+#             */
-/*   Updated: 2022/03/09 18:35:12 by dokkim           ###   ########.fr       */
+/*   Updated: 2022/03/10 12:39:12 by jaejeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@
 
 static int	key_hook(int key_code, t_data *data)
 {
-	printf("keycode : %d\n", key_code);
 	if (key_code == ESC)
 	{
 		mlx_destroy_window(data->mlx.mlx_ptr, data->mlx.window);

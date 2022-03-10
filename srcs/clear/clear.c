@@ -3,14 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   clear.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dokkim <dokkim@student.42seoul.kr>         +#+  +:+       +#+        */
+/*   By: jaejeong <jaejeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 17:19:55 by dokkim            #+#    #+#             */
-/*   Updated: 2022/03/09 18:43:33 by dokkim           ###   ########.fr       */
+/*   Updated: 2022/03/10 12:40:03 by jaejeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
 #include <mlx.h>
 #include <stdlib.h>
 #include "clear.h"
@@ -25,7 +24,7 @@ static void	clear_map(t_data *data)
 	temp = data->map_data;
 	while (temp[i])
 	{
-		free (temp[i]);
+		free(temp[i]);
 		i++;
 	}
 	free(temp);
