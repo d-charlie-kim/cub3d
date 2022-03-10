@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   put_data.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dokkim <dokkim@student.42seoul.kr>         +#+  +:+       +#+        */
+/*   By: jaejeong <jaejeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/24 20:37:02 by dokkim            #+#    #+#             */
-/*   Updated: 2022/03/07 19:41:32 by dokkim           ###   ########.fr       */
+/*   Updated: 2022/03/10 14:46:16 by jaejeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ static int	value_valid_check(char *line)
 	count = 0;
 	while (line[i])
 	{
-		if (checking (line, &i, &size, &count))
+		if (checking(line, &i, &size, &count))
 			return (1);
 	}
 	if (count != 2 || size == 0 || size > 3)

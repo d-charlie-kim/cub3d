@@ -6,7 +6,7 @@
 /*   By: jaejeong <jaejeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/24 17:19:07 by dokkim            #+#    #+#             */
-/*   Updated: 2022/03/10 12:38:58 by jaejeong         ###   ########.fr       */
+/*   Updated: 2022/03/10 14:53:58 by jaejeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,10 @@ void	init_data(t_data *data)
 	int	i;
 
 	i = 0;
+	data->textures.wall_east = NULL;
+	data->textures.wall_west = NULL;
+	data->textures.wall_north = NULL;
+	data->textures.wall_south = NULL;
 	while (i < 4)
 	{
 		data->textures.floor[i] = -1;

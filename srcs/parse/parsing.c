@@ -6,7 +6,7 @@
 /*   By: jaejeong <jaejeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/24 15:57:40 by dokkim            #+#    #+#             */
-/*   Updated: 2022/03/10 12:38:44 by jaejeong         ###   ########.fr       */
+/*   Updated: 2022/03/10 15:03:26 by jaejeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,17 +26,17 @@ static int	classify_data(t_data *data, char *line)
 		i++;
 	if (line[i] == 0)
 		return (0);
-	else if (!ft_strncmp(line, "NO ", 3))
+	else if (!ft_strncmp(line, "NO ", 3) && data->textures.wall_north == NULL)
 		put_data(data, NO, line + i + 3);
-	else if (!ft_strncmp(line, "SO ", 3))
+	else if (!ft_strncmp(line, "SO ", 3) && data->textures.wall_south == NULL)
 		put_data(data, SO, line + i + 3);
-	else if (!ft_strncmp(line, "WE ", 3))
+	else if (!ft_strncmp(line, "WE ", 3) && data->textures.wall_west == NULL)
 		put_data(data, WE, line + i + 3);
-	else if (!ft_strncmp(line, "EA ", 3))
+	else if (!ft_strncmp(line, "EA ", 3) && data->textures.wall_east == NULL)
 		put_data(data, EA, line + i + 3);
-	else if (!ft_strncmp(line, "F ", 2))
+	else if (!ft_strncmp(line, "F ", 2) && data->textures.floor[0] == -1)
 		put_data(data, F, line + i + 2);
-	else if (!ft_strncmp(line, "C ", 2))
+	else if (!ft_strncmp(line, "C ", 2) && data->textures.ceilling[0] == -1)
 		put_data(data, C, line + i + 2);
 	else
 		return (1);
