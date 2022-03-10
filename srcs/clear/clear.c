@@ -6,7 +6,7 @@
 /*   By: jaejeong <jaejeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 17:19:55 by dokkim            #+#    #+#             */
-/*   Updated: 2022/03/10 15:15:18 by jaejeong         ###   ########.fr       */
+/*   Updated: 2022/03/10 15:21:48 by jaejeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,4 +43,5 @@ void	clear_all(t_data *data)
 	mlx_destroy_image(data->mlx.mlx_ptr, data->textures.tex_image[2]);
 	mlx_destroy_image(data->mlx.mlx_ptr, data->textures.tex_image[3]);
 	mlx_destroy_image(data->mlx.mlx_ptr, data->mlx.image);
+	mlx_destroy_window(data->mlx.mlx_ptr, data->mlx.window);
 }
