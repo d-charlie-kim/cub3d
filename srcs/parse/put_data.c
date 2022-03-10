@@ -6,11 +6,10 @@
 /*   By: jaejeong <jaejeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/24 20:37:02 by dokkim            #+#    #+#             */
-/*   Updated: 2022/03/10 15:16:14 by jaejeong         ###   ########.fr       */
+/*   Updated: 2022/03/10 16:46:31 by jaejeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include <stdlib.h>
 #include "libft.h"
 #include "structure.h"
@@ -82,17 +81,18 @@ static void	get_color_value(int *texture, char *line)
 			print_err_and_exit("Error\n : CANT ALLOCATE MEMORY\n");
 		ft_strlcpy(temp, line + i - size, size + 1);
 		texture[index] = ft_atoi(temp);
-		free (temp);
+		free(temp);
 		index++;
 		if (line[i] == ',')
 			i++;
 	}
 }
 
-void	put_data(t_data *data, int id, char *line)
+void	put_data(t_data *data, int id, char *temp)
 {
-	while (*line == ' ')
-		line++;
+	char	*line;
+
+	line = ft_strtrim(temp, " ");
 	if (id == NO)
 		data->textures.wall_north = ft_strdup(line);
 	else if (id == SO)
@@ -110,6 +110,7 @@ void	put_data(t_data *data, int id, char *line)
 		else if (id == C)
 			get_color_value(data->textures.ceilling, line);
 	}
+	free(line);
 }
 
 void	put_map(t_data *data, char *line)
@@ -132,6 +133,6 @@ void	put_map(t_data *data, char *line)
 		new_map[i] = (data->map_data)[i];
 		i--;
 	}
-	free (data->map_data);
+	free(data->map_data);
 	data->map_data = new_map;
 }

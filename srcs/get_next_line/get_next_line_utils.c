@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dokkim <dokkim@student.42seoul.kr>         +#+  +:+       +#+        */
+/*   By: jaejeong <jaejeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/18 17:19:18 by jaejeong          #+#    #+#             */
-/*   Updated: 2022/02/25 17:24:51 by dokkim           ###   ########.fr       */
+/*   Updated: 2022/03/10 16:24:52 by jaejeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ int	zero_or_error(char **line, char *temp, int ret)
 
 int	error_free(char *first, char *second)
 {
-	free (first);
-	free (second);
+	free(first);
+	free(second);
 	return (-1);
 }

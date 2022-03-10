@@ -6,7 +6,7 @@
 /*   By: jaejeong <jaejeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/24 15:57:40 by dokkim            #+#    #+#             */
-/*   Updated: 2022/03/10 15:16:23 by jaejeong         ###   ########.fr       */
+/*   Updated: 2022/03/10 16:27:34 by jaejeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ static void	get_data(int fd, t_data *data)
 			flag = classify_data(data, line);
 		if (flag == 1)
 			put_map(data, line);
-		free (line);
+		free(line);
 	}
 }
 

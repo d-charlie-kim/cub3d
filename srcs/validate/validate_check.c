@@ -6,7 +6,7 @@
 /*   By: jaejeong <jaejeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 19:15:33 by dokkim            #+#    #+#             */
-/*   Updated: 2022/03/10 15:16:25 by jaejeong         ###   ########.fr       */
+/*   Updated: 2022/03/10 15:42:59 by jaejeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,9 +88,9 @@ void	rgb_check(t_textures *textures)
 	while (i < 3)
 	{
 		if (textures->ceilling[i] < 0 || textures->ceilling[i] > 255)
-			print_err_and_exit("Error\n : INVALID CEILLING RGB\n");
+			print_err_and_exit("Error\n : INVALID .cub FILE\n");
 		if (textures->floor[i] < 0 || textures->floor[i] > 255)
-			print_err_and_exit("Error\n : INVALID FLOOR RGB\n");
+			print_err_and_exit("Error\n : INVALID .cub FILE\n");
 		i++;
 	}
 }

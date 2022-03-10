@@ -6,7 +6,7 @@
 /*   By: jaejeong <jaejeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 16:53:52 by jaejeong          #+#    #+#             */
-/*   Updated: 2022/03/10 15:15:47 by jaejeong         ###   ########.fr       */
+/*   Updated: 2022/03/10 16:15:14 by jaejeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,23 +19,23 @@ static void	move(t_data *data, double *pos_x, double *pos_y, int key_code)
 {
 	if (key_code == W)
 	{
-		*pos_x += data->player.dir_x / 10;
-		*pos_y += data->player.dir_y / 10;
+		*pos_x += data->player.dir_x / 7;
+		*pos_y += data->player.dir_y / 7;
 	}
 	else if (key_code == S)
 	{
-		*pos_x -= data->player.dir_x / 10;
-		*pos_y -= data->player.dir_y / 10;
+		*pos_x -= data->player.dir_x / 7;
+		*pos_y -= data->player.dir_y / 7;
 	}
 	else if (key_code == A)
 	{
-		*pos_x += data->player.dir_y / 10;
-		*pos_y -= data->player.dir_x / 10;
+		*pos_x += data->player.dir_y / 7;
+		*pos_y -= data->player.dir_x / 7;
 	}
 	else if (key_code == D)
 	{
-		*pos_x -= data->player.dir_y / 10;
-		*pos_y += data->player.dir_x / 10;
+		*pos_x -= data->player.dir_y / 7;
+		*pos_y += data->player.dir_x / 7;
 	}
 }
 
@@ -49,8 +49,14 @@ void	player_movement(t_data *data, int key_code)
 	move(data, &(data->player.pos_x), &(data->player.pos_y), key_code);
 	if (data->map_data[(int)(data->player.pos_y)][(int)old_pos_x] == '1')
 		data->player.pos_y = old_pos_y;
-	if (data->map_data[(int)(old_pos_y)][(int)data->player.pos_x] == '1')
+	if (data->map_data[(int)old_pos_y][(int)(data->player.pos_x)] == '1')
 		data->player.pos_x = old_pos_x;
+	if (data->map_data[(int)(data->player.pos_y)][(int)(data->player.pos_x)]
+			== '1')
+	{
+		data->player.pos_y = old_pos_y;
+		data->player.pos_x = old_pos_x;
+	}
 	show_image(data);
 }
 

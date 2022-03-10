@@ -6,7 +6,7 @@
 #    By: jaejeong <jaejeong@student.42seoul.kr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/24 15:59:26 by dokkim            #+#    #+#              #
-#    Updated: 2022/03/10 12:59:44 by jaejeong         ###   ########.fr        #
+#    Updated: 2022/03/10 16:45:04 by jaejeong         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -69,6 +69,7 @@ ERROR_SRCS		= $(addprefix ./srcs/error/, \
 
 UTILS_SRCS		= $(addprefix ./srcs/utils/, \
 					libft.c \
+					libft2.c \
 					)
 
 CLEAR_SRCS		= $(addprefix ./srcs/clear/, \
